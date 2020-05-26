@@ -1,164 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keshav Gupta</title>
 
-    <link href="css/bootstrap-grid.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel = "icon" href =  "new-logo.PNG" type = "image/x-icon">
-    <script language="javascript">
-        if(screen.width>=1000) {document.write("<style>body{zoom:120%;}</style>");}
-        </script>
-    <style>
-        body{
-    margin: 0;
+        <style>
+
+                /* Style the header */
+                .header {
+                  padding: 10px 16px;
+                  background: #202026;
+                  color: #999999;
+                }
+                
+                /* Page content */
+                .content {
+                  padding: 1px;
+                }
+                .navigation-stick {
+    background-color: #202026;
 }
-@font-face { font-family: Product-sans; src: url('fonts/product-sans/Product Sans Regular.ttf'); }
-.one-edge-shadow {
-	-webkit-box-shadow: 0 8px 8px -6px gray;
-	   -moz-box-shadow: 0 8px 8px -6px gray;
-	        box-shadow: 0 8px 8px -6px gray;
-}
-.one-side-shadow {
-	-webkit-box-shadow: 6px 0 8px -6px gray;
-	   -moz-box-shadow: 6px 0 8px -6px gray;
-	        box-shadow: 6px 0 8px -6px gray;
-}
-.one-side {
-	-webkit-box-shadow: 9px 9px 8px -6px gray;
-	   -moz-box-shadow: 9px 9px 8px -6px gray;
-	        box-shadow: 9px 9px 8px -6px gray;
-}
-.borders {
-  border: 5px solid #4081f1; 
-  outline: 5px solid #fbbd01;
-}
-        </style>
+                
+                /* The sticky class is added to the header with JS when it reaches its scroll position */
+                .sticky {
+                  position: fixed;
+                  top: 0;
+                  z-index: 99;
+                  width: 100%
+                }
+                
+                /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+                
+                </style>
+                
+                <script>
+                
+                window.onscroll = function() {myFunction()};
+                
+                // Get the header
+                var header = document.getElementById("myHeader");
+                
+                // Get the offset position of the navbar
+                var sticky = header.offsetTop;
+                
+                // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+                function myFunction() {
+                  if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                  } else {
+                    header.classList.remove("sticky");
+                  }
+                }
+                </script>
+
+
+        <title>Keshav Gupta</title>
+
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="My Personal resume website" />
+        <meta name="keywords" content="creative, cv, designer,  online cv, online resume, powerful portfolio, professional, professional resume, responsive, resume, vcard " />
+        <meta name="developer" content="Algomaster09">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#b91d47">
+<meta name="theme-color" content="#ffffff">
+        
+        <!-- Google Font-->
+        <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/plugins/css/bootstrap.min.css">
+        <!-- Animate CSS-->
+        <link rel="stylesheet" href="assets/plugins/css/animate.css">
+        <!-- Owl Carousel CSS-->
+        <link rel="stylesheet" href="assets/plugins/css/owl.css">
+        <!-- Fancybox-->
+        <link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
+        <!-- Custom CSS-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body style="background-color: whitesmoke;">
+
+<body class="dark-vertion black-bg">
+        <!-- Start Loader -->
+        <!-- <div class="section-loader">
+            <div class="loader">
+                <div></div>
+                <div></div> 
+            </div>
+        </div> -->
+        <!-- End Loader -->
+        
+        <!--
+        ===================
+           NAVIGATION
+        ===================
+        -->
+        <div class="header" id="myHeader">
+
+                <div class="container">
+                        <div class="row">
+                            <nav class="navbar navbar-expand-lg mh-nav nav-btn">
+                                
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav mr-auto ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="#mh-home"><p style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 25px ;color: white; ">Home</p></a>
+                                        </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#mh-about"><p style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 25px ;color: white; ">About</p></a>
+                                        </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <li class="nav-item">
+                                           <a class="nav-link" href="#mh-skills"><p style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 25px ;color: white; ">Skills</p></a>
+                                        </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                
+                                        <li class="nav-item">
+                                           <a class="nav-link" href="#mh-experience"><p style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 25px ;color: white; ">Experiences</p></a>
+                                        </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#mh-portfolio"><p style=" font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 25px ;color: white; ">Projects</p></a>
+                                        </li>                               
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+
+              </div>
+        
+        <!--
+        ===================
+            HOME 
+        ===================
+        -->
+        <section class="mh-home" id="mh-home">
+            <div class="home-ovimg">
+                <div class="container">
+                    <div class="row xs-column-reverse section-separator vertical-middle-content" >
+                        <div class="col-sm-6">
+                            <div class="mh-header-info">
+                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                                    <span>Hello World  </span>
+                                </div>
+                                
+                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Keshav Gupta</h2>
+                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Incoming SWE at Optum</h4>
+                                
+                                <ul>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a href="mailto:">guptakeshav2509@email.com</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a href="callto:">+91-8556058216</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-map-marker"></i><address>F-9/2178 , Guru Nanak Nagar Batala Road, Amritsar</address></li>
+                                </ul>
+                                
+                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100013156097455&ref=bookmarks"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/kgupta786"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.github.com/algomaster09"><i class="fa fa-github"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hero-img wow fadeInUp" data-wow-duration="0.2s" data-wow-delay="0.2s">
+                               
+                                    <img src="assets/images/keshavp.jfif" alt=""  class="img-fluid" style="width: 350px;height: 350px;padding: 3%" >
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+        
+        <!--
+        ==================
+            ABOUT
+        =================
+        -->
+        <section class="mh-about" id="mh-about">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                            <img src="assets/images/ab-img.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-inner">
+                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Hello, I’m Keshav Gupta currently being an undergrad at Thapar Institute of Engineering and Technology , Patiala. 
+                           <br> I have a better experience in competitive programming area as well as Application development whether it's a WebApp or Android App. <br><br>Well below mentioned skills will tell you more :)</p>
+                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <ul>
+                                    <li><span>PHP</span></li>
+                                    <li><span>HTML5</span></li>
+                                    <li><span>CSS</span></li>
+                                    <li><span>ANDROID</span></li>
+                                    <li><span>C++</span></li>
+                                    <li><span>PYTHON</span></li>
+                                    <li><span>JS</span></li>
+                                    <li><span>ASP.NET</span></li>
+                                    <li><span>ML</span></li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1srImGaBSVatZVY4bNkhKzHTkj3kqYesE/view?usp=sharing" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Download Resume <i class="fa fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           SERVICE
+        ===================
+        -->
+        <section class="mh-service">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h2>What I do :)</h2>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="fa fa-bullseye purple-color"></i>
+                            <h3>Competitive Programming</h3>
+                            <p>
+                                Really a lot of competitive programming ; )
+                                <br>Have a look at my Codechef and Codeforces Profile:
+                                <ol>
+                                    <li><a href="https://www.codechef.com/users/keshav_786"><span style="color: springgreen">Codechef</span></a>: Secured a Global Rank of <span style="color:springgreen">459</span> during Cook-off Challenge</li>
+                                    <li><a href="http://codeforces.com/profile/mlmaster"><span style="color: springgreen">Codeforces</span></a>: Secured a Global Rank of <span style="color:springgreen">653</span> during Division Challenge</li>
+                                </ol> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <i class="fa fa-code iron-color"></i>
+                            <h3>Web Development</h3>
+                            <p>
+                                I love to work on web part. Worked upon different projects some of them are related to NGOs and some are with other collaborators.
+                                <br> Rich experience with HTML5, CSS, PHP, ASP.NET
+                                <br>Some of my major projects:
+                                <ol><li>
+                                        <span style="color:springgreen">&nbsp;Zero Gravity Website</span>
+                                    </li></ol> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <i class="fa fa-object-ungroup sky-color"></i>
+                            <h3>Android App Development</h3>
+                            <p>
+                                A great fun while working with Android , Worked upon different projects and some of them were being used in hackathons.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>       
+        
+        <!--
+        ===================
+           SKILLS
+        ===================
+        -->
+        <section class="mh-skills" id="mh-skills">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title text-center col-sm-12">
+                        <!--<h2>Skills</h2>-->
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="mh-skills-inner">
+                            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <h3>Some Major Technical Skills</h3>
+                                <div class="each-skills">
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">C++ and STL</div>
+                                                <div class="percentagem-num">70%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Python</div>
+                                                <div class="percentagem-num">60%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">ML</div>
+                                                <div class="percentagem-num">65%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 65%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">PHP</div>
+                                                <div class="percentagem-num">50%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 50%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">JavaScript</div>
+                                                <div class="percentagem-num">40%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                            <div class="parcial">
+                                                <div class="info">
+                                                    <div class="nome">Android</div>
+                                                    <div class="percentagem-num">65%</div>
+                                                </div>
+                                                <div class="progressBar">
+                                                    <div class="percentagem" style="width: 65%;"></div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <h3>Research Work</h3>
+                            <ol style="list-style-type: disc" >
+                                <li>
+                                    <h6>An adaptive framework to image watermarking based on the TSVR and GA in lifting wavelet transform domain.</h6>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i> -Dr. Rajesh Mehta</i>
+                                    
+                                </li>
+                                
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+        ===================
+           EXPERIENCES
+        ===================
+        -->
+        <section class="mh-experince" id="mh-experience">
+            <div class="bolor-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-education">
+                                 <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
+                                <div class="mh-education-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <h4>B.E. in COE </h4>
+                                        <div class="mh-eduyear">Thapar Institute of Engineering and Technology , Patiala (2016-2020)</div>
+                                        <p>Current CGPA: 9.43/10.0 </p>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                            <h4>Senior Secondary Examination By ( CBSE ) </h4>
+                                            <div class="mh-eduyear">Bhavan's SL Public School, Amritsar (2016)</div>
+                                            <p>Percentage: 91% </p>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                            <h4>Secondary Examination ( CBSE ) </h4>
+                                            <div class="mh-eduyear">Bhavan's SL Public School, Amritsar (2014)</div>
+                                            <p>CGPA: 10/10 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-work">
+                                 <h3>Work Experience</h3>
+                                <div class="mh-experience-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                        <h4>Open Source Contributor <span style="color: springgreen">GSSOC'19</span></h4>
+                                        <div class="mh-eduyear">March 2019 - May 2019</div>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Worked with the website development of Zero Gravity NGO and resolved certain issues related to online forms</li>
+                                            
+                                        </ul>
+                                    </div>                                
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <h4>Summer Intern <span style="color: springgreen">GeeksforGeeks</span></h4>
+                                        <div class="mh-eduyear">2018</div>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Worked with GFG team on introducing certain articles related to C#</li>
+                                            
+                                        </ul>
+                                    </div>                                
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     
-<div div class="w3-panel w3-card-4" style="margin-top: 0%; background-color: #4081f1;">
-<div class="row"  style="max-height: 70px; width: 102%;" >
-<div class="col-sm-6">
-    <h1 style="font-family: Product-sans; font-size: 45px; margin-left: 2%; "><span style="color: white;">hey! it's</span> <span style="color: black;" >Keshav </span><span style="color: black;" >Gupta</span></h1>
-</div>    
-    <div class="col-sm-6">
-    <div class="row">
-    <div class="col-sm-2" ></div>
-    <div class="col-sm-2" ></div>
-    <div class="col-sm-2" >
-     
-    </div>
-    <div class="col-sm-2" >
-        <a href="https://www.linkedin.com/in/kgupta786" style="text-decoration: none;"><span class="fa fa-linkedin" style="font-size: 35px; color:white; margin-top: 20%; margin-left: 25%; margin-bottom: 10%;"></span></a>
-    </div>
-    <div class="col-sm-2" >
-        <a href="https://github.com/algomaster09" style="text-decoration: none;"><span class="fa fa-github" style="font-size: 35px; color:white;margin-top: 20%;margin-left: 25%;"></span></a>
-    </div>
-    <div class="col-sm-2" >
-        <a href="https://www.facebook.com/people/Keshav-Gupta/100013156097455" style="text-decoration: none;"><span class="fa fa-facebook" style="font-size: 35px; color:white; margin-top: 20%; margin-left: 25%;"></span></a>
-    </div>
+        <!--
+        ===================
+           PROJECTS
+        ===================
+        -->
+        <section class="mh-experince" id="mh-portfolio">
+                <div class="bolor-overlay">
+                    <div class="container">
+                        <div class="row section-separator">
 
-</div>
-</div>
-</div>
-</div>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="mh-work">
+                                     <h3 style="text-align: center">Some Major Projects</h3>
+                                    <div class="mh-experience-deatils">
+                                        <!-- Education Institutes-->
+                                        <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                           <a href="https://github.com/algomaster09/Graph_recommender_system.git"> <h4>Recommendation system in Python</h4> </a>
+                                            
+                                            <ul class="work-responsibility">
+                                                <li><i class="fa fa-circle"></i> Content based ﬁltering approach is mainly used to recommend the users certain types of movies. This project also holds the basic implemenation of Trie data structure as well string searching algorithms. </li>
+                                                
+                                            </ul>
+                                        </div>  
+                                        <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                                <a href="https://github.com/algomaster09/Emotion-Recognition_ML_Approach.git"> <h4>Emotion Recognition system using ML</h4> </a>
+                                                 
+                                                 <ul class="work-responsibility">
+                                                     <li><i class="fa fa-circle"></i>This project is implemented using random forest approach in machine learning which ultimately tries to give the name to your current expression.  </li>
+                                                     
+                                                 </ul>
+                                             </div>                               
+                                        <!-- Education Institutes-->
+                                        <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                                <a href="https://github.com/algomaster09/ShoutOuts_Application.git"> <h4>ShoutOuts Android Application </h4></a>
+                                            
+                                            <ul class="work-responsibility">
+                                                <li><i class="fa fa-circle"></i> This application is intended to deal with the increasing concerns of women safety. It has certain safety features such as map locations, continuous tracking, calling and messaging facility</li>
+                                                
+                                            </ul>
+                                        </div>  
+                                        <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                                <a href="https://github.com/algomaster09/Spell-Checker-Application.git"> <h4>Spell Checker Application</h4></a>
+                                                
+                                                <ul class="work-responsibility">
+                                                    <li><i class="fa fa-circle"></i> The application is intended to deal with incorrect spellings within the text and can notify the user based upon certain recommendations. It is based upon the concepts of Natural Language Processing. </li>
+                                                    
+                                                </ul>
+                                            </div> 
+                                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                                    <a href="https://github.com/algomaster09/Search_Engine.git"> <h4>Search Engine</h4></a>
+                                                   
+                                                    <ul class="work-responsibility">
+                                                        <li><i class="fa fa-circle"></i> The project is a naive based implementation which usually deals with searches related to queries which a user wants to search. Also the engine has a unique property of getting the voice input and search for it within the created database in MYSQL.
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </div>                               
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<div class="row" >
-<div class="w3-panel w3-card-4 col-sm-3" style="background-color: #34a853;">
-
-    <a href="index.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">About me</p>   
-    </div></a>
-    <a href="experience.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">Work Experience</p>   
-    </div></a>
-    <a href="education.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">Education</p>
-    </div></a>
-    <a href="skills.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">Technical Skillset</p>   
-    </div></a>
-    <a href="programming.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">My Competitive Programming Stats</p>   
-    </div></a>
-    <a href="projects.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">Research Works & Projects</p>   
-    </div></a>
-    <a href="extra.html" style="text-decoration: none;"><div class="w3-panel w3-card" style="background-color: whitesmoke;">
-        <p style="font-size: 20px; font-family: Product-sans; text-align: center;">Extracurricular Activities</p>   
-    </div></a>
-</div>
-
-
-<div class="col-sm-9">
-    <div class="row">
-
-       <div class="col-sm-1"></div>
-       <div class="col-sm-5">
-           <div class="w3-panel w3-card-4" style="height: 620px; background-color: orangered; ">
-        <div class="row">
-            <div class="w3-panel w3-card-4" style="background-color: black;border-radius: 170px;border-style: solid; border-color: black;border-width: 2px;margin-left: 100px;margin-top: 40px;">
-                <img src="img.jpeg" style="width: 200px; height: 200px; margin-top: 6%; margin-bottom: 6%; border-radius: 100px;">
-            </div>
-        </div>
-        <div class="row">
-            <div class="w3-panel w3-card-4" style="background-color: whitesmoke; width: 400px; margin-left: 30px;">
- <p style="font-size: 20px; font-family: Product-sans;text-align: justify;">
-    Hey! I am Keshav Gupta currently being a final year undergraduate at Thapar Institute of Engineering and Technology, Patiala doing B.E. in Computer Engineering
-    Generally I prefer to do competitive programming and along with this I also prefer to develop Web Apps as well as Android Apps.
- </p>          
-            </div>
-        </div>
-
-
-        </div>
-       </div>
-       <div class="col-sm-4">
-        <div class="w3-panel w3-card-4" style="height: 620px; background-color: white;">
-        <div class="w3-panel">
-            <p style="font-size: 25px; font-family: Product-sans; text-align: center;">Some Useful Information</p>
-        </div>
-        <div class="w3-panel w3-card-4">
             
-            <p style="font-size: 20px; font-family: Product-sans; text-align: center;"><span class="fa fa-mobile" style="font-size: 25px;margin-right: 20px;"></span>+91-8556058216</p>
-        </div>
-        <div class="w3-panel w3-card-4">
-            <p style="font-size: 20px; font-family: Product-sans; text-align: center;"><span class="fa fa-map" style="font-size: 25px; margin-right: 20px;"></span>F-9/2178 Guru Nanak Nagar, Batala Road, Amritsar</p>
-        </div>
-        <div class="w3-panel w3-card-4">
-            <p style="font-size: 20px; font-family: Product-sans;"><span class="fa fa-envelope" style="font-size: 25px; margin-right: 8px;"></span>guptakeshav2509@gmail.com</p>
-        </div>
-        <div class="w3-panel w3-card-4">
-        <a href="https://drive.google.com/file/d/12ptPZzLVq5raHvb5ql8HDX2_p4Y4-tVw/view?usp=sharing"><p style="font-size: 20px; font-family: Product-sans; text-align: center;"><span class="fa fa-download" style="font-size: 25px; margin-right: 20px;"></span>Download My Resume</p></a>
-        </div>
-        </div>
-       </div>
-
-
-
-
-    </div>
-    
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
+                <h6 style="text-align: center; font-family: monospace; font-size: 20px">Made with <span style="color: red ;  font-size: 25px">♥</span> by Keshav Gupta</h6>
+                
 
 
 
 </body>
+
+
+
 </html>
