@@ -39,10 +39,7 @@ export default function ProfileCard() {
                     Software Development Engineer @ Amazon
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Roboto, sans-serif', fontSize: 19 }}>
-                    Keshav Gupta is an experienced software engineer with a strong background in developing scalable and maintainable systems.
-                    At Amazon, Keshav has successfully implemented solutions in Kotlin to streamline the Ordering Checkout Process, reducing operational load significantly.
-                    He has also designed comprehensive frontend and backend systems for a unified dataset evaluation and annotation portal, enhancing annotator efficiency and accuracy.
-                    His expertise extends to working with Spark and Scala for variable cost allocations in Sort Centers and contributing to various projects involving C++ and Java.
+                    Keshav Gupta is a skilled software development engineer with a proven track record at Amazon, where he has delivered scalable and maintainable solutions across various systems. With a good understanding in Kotlin, he has optimized the ordering checkout process in JWO systems, significantly reducing operational load. Keshav’s proficiency extends to designing robust frontend and backend systems, including a unified dataset evaluation and annotation portal that enhances efficiency and accuracy. Additionally, he has experience working with Spark and Scala for cost allocations corresponding to sort-centers and has contributed to multiple projects involving C++ and Java. Keshav is also well-versed in the Machine Learning domain, applying his analytical skills to develop models and solutions that drive innovation.
                 </Typography>
                 <CardActions sx={{ mt: 2 }}>
                     <Link href="https://www.linkedin.com/in/kgupta786" target="_blank" rel="noopener" color="text.primary">
