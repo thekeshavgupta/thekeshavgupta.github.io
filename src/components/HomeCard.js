@@ -38,7 +38,7 @@ export default function ProfileCard() {
                 <Typography variant="h5" component="div" sx={{ fontFamily: 'Roboto, sans-serif', mb: 5 }}>
                     Software Development Engineer @ Amazon
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Roboto, sans-serif', fontSize: 19 }}>
+                <Typography variant="body2" color="text.secondary" sx={{ fontFamily: 'Roboto, sans-serif', fontSize: 19, textAlign: 'justify'}}>
                     Keshav Gupta is a skilled software development engineer with a proven track record at Amazon, where he has delivered scalable and maintainable solutions across various systems. With a good understanding in Kotlin, he has optimized the ordering checkout process in JWO systems, significantly reducing operational load. Keshav’s proficiency extends to designing robust frontend and backend systems, including a unified dataset evaluation and annotation portal that enhances efficiency and accuracy. Additionally, he has experience working with Spark and Scala for cost allocations corresponding to sort-centers and has contributed to multiple projects involving C++ and Java. Keshav is also well-versed in the Machine Learning domain, applying his analytical skills to develop models and solutions that drive innovation.
                 </Typography>
                 <CardActions sx={{ mt: 2 }}>
