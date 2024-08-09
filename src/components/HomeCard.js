@@ -43,7 +43,6 @@ export default function ProfileCard() {
                     At Amazon, Keshav has successfully implemented solutions in Kotlin to streamline the Ordering Checkout Process, reducing operational load significantly.
                     He has also designed comprehensive frontend and backend systems for a unified dataset evaluation and annotation portal, enhancing annotator efficiency and accuracy.
                     His expertise extends to working with Spark and Scala for variable cost allocations in Sort Centers and contributing to various projects involving C++ and Java.
-                    With a keen eye for detail and a commitment to quality, Keshav is dedicated to advancing technology and improving system performance.
                 </Typography>
                 <CardActions sx={{ mt: 2 }}>
                     <Link href="https://www.linkedin.com/in/kgupta786" target="_blank" rel="noopener" color="text.primary">
