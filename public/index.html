@@ -14,7 +14,22 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+          <script>
+            function detectSpecificDevices() {
+              const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+              // Detect iPhone
+              if (/iPhone/.test(userAgent) && !window.MSStream) {
+                document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
+              }
+              // Detect Android (example)
+              else if (/Android/.test(userAgent)) {
+                document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
+              }
+            }
+            window.onload = detectSpecificDevices;
+          </script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
