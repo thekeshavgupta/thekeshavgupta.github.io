@@ -1,6 +1,7 @@
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import React, { useState } from 'react';
 import ProfileCard from './HomeCard';
+import { Experience } from './experience/expcard';
 import {
     AppBar,
     Box,
@@ -21,11 +22,11 @@ import Science from '@mui/icons-material/Science';
 import CodeIcon from '@mui/icons-material/Code';
 import Home from '@mui/icons-material/Home';
 import Footer from './footer';
-import MyPage from './education/eductioncard';
+import MyPage from './education/educationcard';
 
 const pages = [
     { label: 'Home', icon: <Home /> },
-    // { label: 'Experience', icon: <WorkIcon /> },
+    { label: 'Experience', icon: <WorkIcon /> },
     { label: 'Education', icon: <SchoolIcon /> },
     // { label: 'Research', icon: <Science /> },
     // { label: 'Projects', icon: <PrecisionManufacturing /> },
@@ -135,6 +136,7 @@ export default function MyAppBar() {
 
             {currPage == 'Home' && <ProfileCard />}
             {currPage == 'Education' && <MyPage />}
+            {currPage == 'Experience' && <Experience/>}
 
             <Footer/>
 
