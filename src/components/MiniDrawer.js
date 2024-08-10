@@ -23,7 +23,6 @@ import CodeIcon from '@mui/icons-material/Code';
 import Home from '@mui/icons-material/Home';
 import Footer from './footer';
 import MyPage from './education/educationcard';
-import RainbowText from './rcolor';
 
 const pages = [
     { label: 'Home', icon: <Home /> },
