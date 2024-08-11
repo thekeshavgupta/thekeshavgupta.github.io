@@ -1,112 +1,150 @@
-import React from 'react';
-import { Accordion, AccordionSummary, AccordionDetails, Container, Typography, Paper, Box } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import React from "react";
+import { brown, red } from '@mui/material/colors';
+import { Paper, CardContent, Box, Typography, Avatar, CssBaseline } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Footer from "../footer";
+const theme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+    typography: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        h1: {
+            fontSize: '5vw', // Adjusts the font size relative to the screen width
+            fontWeight: 700,
+        },
+        h3: {
+            fontSize: '2vw', // Smaller font size for the second text
+            fontWeight: 550,
+            color: 'rgba(176, 176, 176, 0.12)', // Transparent gray color for the second text
+        },
+    },
+});
 
-function EducationAccordions() {
+
+function ProfilePaperCard({ companyName, designation, date, color, content, place }) {
     return (
-        <Container sx={{ mt: 3 }}>
-            <Accordion defaultExpanded>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                >
-                    <Typography variant="h5" sx={{
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-}}>Thapar Institute of Engineering and Technology, Patiala, Punjab, India</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <Box sx={{ width: '100%' }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                            <Typography variant="body2" sx={{
-                                fontFamily: 'Poppins',
-                                fontWeight: 500, fontSize: 18 }}>Bachelors of Engineering, Major in Computer Engineering</Typography>
-                            <Typography variant="body2" sx={{
-                                textAlign: 'right', fontFamily: 'Poppins',
-                                fontWeight: 500, fontSize: 18 }}>2016 - 2020</Typography>
-                        </Box>
-                        <Typography variant="body2" component="ul" sx={{
-                            fontSize: '1rem', fontFamily: 'Poppins',
-                            fontWeight: 300 }}>
-                            <li>Secured the B.E. Degree with Cumulative Grade Point Average (CGPA) : 9.41/10.0</li>
-                            <li>Bagged T.I.E.T merit scholarship among 2000+ students.</li>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Paper
+                elevation={20}
+                sx={{
+                    display: { 'md': 'flex', 'xs': 'none' }, maxWidth: 900, maxHeight: 300, marginX: 'auto', color: '#ffffff', borderRadius: '20px', marginTop: 2,
+                }}>
+                {/* Left Portion */}
+                <Box sx={{ width: '40%', padding: 2, textAlign: 'center', borderRight: '3px solid #555' }}>
+                    <Avatar
+                        variant="rounded"
+                        sx={{
+                            width: 75, height: 75, margin: 'auto', marginBottom: 0.5, boxShadow: 10,
+                            bgcolor: color,
+                            fontSize: 50,
+                            fontWeight: 700
+                        }}
+                    >{companyName[0]}</Avatar>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: 18 }}>
+                        {companyName}
+                    </Typography>
+                    <Typography variant="h6" color="text.secondary" sx={{ marginBottom: 2, fontWeight: 'bold', fontSize: 16 }}>
+                        {designation}
+                    </Typography>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: 'auto', gap: 2 }}>
+                        <Typography variant="h6" color="text.secondary" sx={{ fontSize: 12 }}>
+                            {date}
                         </Typography>
                     </Box>
-                </AccordionDetails>
-            </Accordion>
+                </Box>
 
-            <Accordion defaultExpanded sx={{ mt: 2 }}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                >
-                    <Typography variant="h5" sx={{
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-}}>Bhavan's SL Public School, Amritsar, Punjab, India</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <Box sx={{ width: '100%' }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                            <Typography variant="body2" sx={{
-                                fontFamily: 'Poppins',
-                                fontWeight: 500, fontSize: 18}}>Class X, XI, XII </Typography>
-                            <Typography variant="body2" sx={{
-                                textAlign: 'right', fontFamily: 'Poppins',
-                                fontWeight: 500, fontSize: 18 }}>2013 - 2016</Typography>
-                        </Box>
-                        <Typography variant="body2" component="ul" sx={{
-                            fontSize: '1rem', fontFamily: 'Poppins',
-                            fontWeight: 300 }}>
-                            <li>Secured an overall percentage: 91% in CBSE Senior Secondary Board exams.</li>
-                            <li>Secured an overall CGPA: 10.0/10.0 in CBSE Matriculation exams.</li>
-                        </Typography>
-                    </Box>
-                </AccordionDetails>
-            </Accordion>
-        </Container>
+                {/* Right Portion */}
+                <CardContent sx={{ width: '60%', padding: 3, display: 'flex', justifyContent: 'center', alignItems: 'start' }}>
+                    <Typography variant="body1" sx={{ textAlign: 'justify', fontSize: 17 }}>
+                        <ul>
+                            {content.map((bullet, index) => (
+                                <li key={index}>
+                                    {bullet}
+                                </li>
+                            ))}
+                        </ul>
+                    </Typography>
+                </CardContent>
+            </Paper>
+        </ThemeProvider>
     );
-}
-
-export default function MyPage() {
+};
+export default function EducationPage() {
     return (
-        <Paper
-            elevation={16}
-            sx={{
-                maxWidth: 1200,
-                width: '100%',
-                mx: 'auto',
-                my: 12,
-                p: 2,
-                display: 'flex',
-                flexDirection: { xs: 'column', md: 'row' },
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                height: 'auto',
-                backgroundColor: 'background.paper',
-                borderRadius: 2,
-                overflow: 'hidden',
-            }}
-        >
-            {/* Content Section */}
-            <Box sx={{
-                flex: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                p: 2,
-            }}>
-                <Typography variant="h2" component="div" sx={{
-                    fontFamily: 'Poppins',
-                    fontWeight: 500, mb: 1, mx: 3}}>
-                    Education
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'start',
+                    paddingTop: '3vh', // Adjust this value to control the vertical position
+                    backgroundColor: '#121212', // Dark background color
+                }}
+            >
+                <Typography
+                    variant="h1"
+                    sx={{
+                        mx: '20rem',
+                        bgcolor: 'grey.800',
+                        opacity: 0.6,
+                        backgroundSize: '400% 400%',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        fontSize: 96,
+                        borderRight: '10px solid yellow',
+                        animation: 'typing 5s steps(28) 1s 1 normal both, blink-caret 1s step-end infinite',
+                        '@keyframes typing': {
+                            '0%': { width: '0%' },
+                            '100%': { width: '30%' },
+                        },
+                        '@keyframes blink-caret': {
+                            '0%, 100%': { borderColor: 'transparent' },
+                            '50%': { borderColor: 'yellow' }, // Cursor color
+                        },
+                    }}
+                >
+                    education..
                 </Typography>
-                <EducationAccordions/>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'start',
+                        flexWrap: 'wrap',
+                        gap: 1,
+                        padding: 1,
+                        width: '100%',
+                        maxHeight: 'calc(100vh - 100px)', // Adjust as necessary to allow space for header and padding
+
+                    }}
+                >
+                    <ProfilePaperCard
+                        companyName="Thapar Institute of Engineering and Technology, Patiala"
+                        date="2016 - 2020"
+                        designation="Bachelors of Engineering, Major in Computer Engineering"
+                        content={[
+                            "Secured the B.E. Degree with Cumulative Grade Point Average (CGPA) : 9.41/10.0",
+                            "Bagged T.I.E.T merit scholarship among 2000+ students."
+                        ]}
+                        color={red[500]}
+                    />
+                    <ProfilePaperCard
+                        companyName="Bhavan's SL Public School, Amritsar"
+                        date="2013 - 2016"
+                        designation="Class X, XI, XII"
+                        content={[
+                            "Secured an overall percentage: 91% in CBSE Senior Secondary Board exams.",
+                            "Secured an overall CGPA: 10.0/10.0 in CBSE Matriculation exams."
+                        ]}
+                        color={brown[500]}
+                    />
+
+                </Box>
             </Box>
-            
-        </Paper>
+            <Footer positionValue={'fixed'} />
+        </ThemeProvider>
     );
 }

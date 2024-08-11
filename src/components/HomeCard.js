@@ -2,6 +2,7 @@ import React from 'react';
 import { Paper, CardContent, Box, Typography, Avatar, IconButton, CssBaseline } from '@mui/material';
 import { LinkedIn, Email, GitHub } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Footer from './footer';
 
 const theme = createTheme({
     palette: {
@@ -29,10 +30,10 @@ const ProfilePaper = () => {
                 elevation={18}
                 sx={{ display: { 'md': 'flex', 'xs': 'none' }, maxWidth: 1000, marginX: 'auto', color: '#ffffff', borderRadius: '20px', marginTop: 5 }}>
                 {/* Left Portion */}
-                <Box sx={{ width: '40%', padding: 2, textAlign: 'center', borderRight: '1px solid #333' }}>
+                <Box sx={{ width: '40%', padding: 2, textAlign: 'center', borderRight: '3px solid #555' }}>
                     <Avatar
                         src={require("../static/images/profile-image.jpg")}
-                        alt="Your Name"
+                        alt="Keshav Gupta"
                         sx={{ width: 200, height: 200, margin: 'auto', marginBottom: 2, boxShadow: 10 }}
                     />
                     <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
@@ -109,6 +110,7 @@ const ProfileCard = () => {
                 </Typography>
                 <ProfilePaper />
             </Box>
+            <Footer positionValue={'fixed'}/>
         </ThemeProvider>
     );
 };

@@ -2,12 +2,12 @@ import React from 'react';
 import { Container, Typography, Box, IconButton } from '@mui/material';
 import Favorite from '@mui/icons-material/Favorite';
 
-export default function Footer() {
+export default function Footer({positionValue}) {
     return (
         <Box
             component="footer"
             sx={{
-                position: 'fixed',
+                position: positionValue,
                 bottom: 0,
                 width: '100%',
                 py: 2,

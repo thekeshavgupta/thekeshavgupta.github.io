@@ -1,18 +1,6 @@
-import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import React, { useState } from 'react';
-import ProfileCard from './HomeCard';
-import { Experience } from './experience/expcard';
-import {
-    AppBar,
-    Box,
-    Toolbar,
-    Switch,
-    IconButton,
-    Button,
-    Container,
-    BottomNavigation,
-    BottomNavigationAction,
-} from '@mui/material';
+import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
+import { AppBar, Box, Toolbar, Switch, IconButton, Container, Tabs, Tab, Paper } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import PrecisionManufacturing from '@mui/icons-material/PrecisionManufacturing';
@@ -22,7 +10,9 @@ import Science from '@mui/icons-material/Science';
 import CodeIcon from '@mui/icons-material/Code';
 import Home from '@mui/icons-material/Home';
 import Footer from './footer';
-import MyPage from './education/educationcard';
+import ProfileCard from './HomeCard';
+import { Experience } from './experience/expcard';
+import EducationPage from './education/educationcard';
 
 const pages = [
     { label: 'Home', icon: <Home /> },
@@ -36,68 +26,48 @@ const pages = [
 
 export default function MyAppBar() {
     const [darkMode, setDarkMode] = useState(true);
-    const [currPage, setCurrPage] = useState('Home')
-    const [bottomNavValue, setBottomNavValue] = useState(0);
-    const theme = createTheme({
-        palette: {
-            
-            mode: darkMode ? 'dark' : 'light',
-            primary: {
-                main: '#1976d2', // Blue color for highlighted icon
-            },
-        },
-    });
+    const [currPage, setCurrPage] = useState('Home');
 
     const handleToggleDarkMode = () => {
         setDarkMode((prevMode) => !prevMode);
     };
 
-    const handleBottomNavChange = (event, newValue) => {
-        setBottomNavValue(newValue);
+    const handleTabChange = (event, newValue) => {
+        setCurrPage(pages[newValue].label);
     };
 
-    const handlePageChange = (pageLabel) => {
-        setCurrPage(pageLabel);
-    };
+    const theme = createTheme({
+        palette: {
+            mode: darkMode ? 'dark' : 'dark',
+            primary: {
+                main: '#1976d2', // Blue color for highlighted tab
+            },
+        },
+    });
 
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <AppBar position="static">
+            <AppBar position='sticky'>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters variant="dense">
-                        <Box sx={{
-                            flexGrow: 1, display: { xs: 'none', md: 'flex' },
-                            justifyContent: 'center', mx: 10,
-                        }}>
-                            {pages.map((page) => (
-                                <Button
-                                    key={page.label}
-                                    onClick={() => handlePageChange(page.label)}
-                                    sx={{
-                                        mx: 5,
-                                        color: 'white',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center',
-                                        textTransform: 'none',
-                                        color: currPage === page.label ? theme.palette.primary.main : 'white',
-                                    }}
-                                >
-                                    <Box>
-                                        {page.icon}
-                                    </Box>
-                                    {page.label}
-                                </Button>
-                            ))}
+                        {/* Tabs for Desktop */}
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+                            <Tabs value={pages.findIndex(page => page.label === currPage)} onChange={handleTabChange} aria-label="Navigation Tabs">
+                                {pages.map((page) => (
+                                    <Tab
+                                        key={page.label}
+                                        label={page.label}
+                                        icon={page.icon}
+                                        iconPosition="start"
+                                        sx={{ textTransform: 'none', mx: 5 }}
+                                    />
+                                ))}
+                            </Tabs>
                         </Box>
 
-
-                        {/* Dark Mode Toggle for desktop*/}
+                        {/* Dark Mode Toggle for Desktop */}
                         <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
-                            { /**
-                             * need to update in the next version update
-                             */}
                             <Switch checked={darkMode} onChange={handleToggleDarkMode} disabled={true} />
                             <IconButton
                                 edge="end"
@@ -107,62 +77,12 @@ export default function MyAppBar() {
                                 {darkMode ? <Brightness4Icon /> : <Brightness7Icon />}
                             </IconButton>
                         </Box>
-
-                        {/* Dark Mode Toggle for small devices*/}
-                        <Box sx={{
-                            display: { xs: 'flex', md: 'none' },
-                            position: 'fixed',
-                            bottom: 70, // Ensure it is above the BottomNavigation
-                            right: 0,
-                            padding: 1,
-                            backgroundColor: theme.palette.background.paper,
-                            borderTopLeftRadius: 8,
-                            borderBottomLeftRadius: 8,
-                            boxShadow: theme.shadows[4],
-                        }}>
-                            <Switch checked={darkMode} onChange={handleToggleDarkMode} // Use default color to match theme
-                            />
-                            <IconButton
-                                edge="end"
-                                color={darkMode ? theme.palette.text.primary : 'warning'}
-                                aria-label="toggle dark mode"
-                            >
-                                {darkMode ? <Brightness4Icon /> : <Brightness7Icon />}
-                            </IconButton>
-                        </Box>
                     </Toolbar>
                 </Container>
             </AppBar>
-
-            {currPage == 'Home' && <ProfileCard />}
-            {currPage == 'Education' && <MyPage />}
-            {currPage == 'Experience' && <Experience/>}
-
-            <Footer/>
-
-            {/* Bottom Navigation for Mobile */}
-            <BottomNavigation
-                value={bottomNavValue}
-                onChange={handleBottomNavChange}
-                showLabels
-                sx={{
-                    display: { xs: 'flex', md: 'none' },
-                    position: 'fixed',
-                    bottom: 0,
-                    width: '100%',
-                    backgroundColor: theme.palette.background.paper, // Match the AppBar color
-                    color: theme.palette.text.primary, // Ensure the text color is readable
-                    boxShadow: theme.shadows[24],
-                }}
-            >
-                <BottomNavigationAction label="Experience" icon={<WorkIcon />} />
-                <BottomNavigationAction label="Education" icon={<SchoolIcon />} />
-                <BottomNavigationAction label="Research" icon={<Science />} />
-                <BottomNavigationAction label="Projects" icon={<PrecisionManufacturing />} />
-                <BottomNavigationAction label="Skills" icon={<CodeIcon />} />
-            </BottomNavigation>
-
-
+            {currPage === 'Home' && <ProfileCard />}
+            {currPage === 'Education' && <EducationPage />}
+            {currPage === 'Experience' && <Experience />}
         </ThemeProvider>
     );
 }
