@@ -58,8 +58,8 @@ body {
 }
 
 .profile-image {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background-color: #444;
   border-radius: 50%;
   border: 5px solid lightblue;

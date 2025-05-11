@@ -11,7 +11,7 @@ const App = () => {
       <div className="content-wrapper">
         {/* Profile Card */}
         <Card className="profile-card">
-          <img src="/images/profile-image.jpg" alt="Profile" className="profile-image profile-image-container" />
+          <img src="/images/my-image.jpeg" alt="Profile" className="profile-image profile-image-container" />
           <div className="profile-info">
             <h1 className="profile-name">Keshav Gupta</h1>
             <p className="profile-designation">Software Engineer 2 @ Microsoft</p>
@@ -30,10 +30,10 @@ const App = () => {
             <div className="contact-card">
               <div className="contact-icons">
                 <a href="mailto:guptakeshav2509@gmail.com">
-                  <FaEnvelope style={{ color: "#e63946" }}  className="contact-icons"  />
+                  <FaEnvelope style={{ color: "#e63946" }} className="contact-icons" />
                 </a>
                 <a href="https://www.linkedin.com/in/kgupta786" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin style={{ color: "#0077b5" }}  className="contact-icons" />
+                  <FaLinkedin style={{ color: "#0077b5" }} className="contact-icons" />
                 </a>
                 <a href="https://github.com/kgupta786" target="_blank" rel="noopener noreferrer">
                   <FaGithub className="contact-icons" />
