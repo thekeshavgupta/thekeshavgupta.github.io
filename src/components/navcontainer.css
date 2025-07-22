@@ -1,0 +1,38 @@
+.main-container {
+    background-color: #02040A;
+    min-height: 100px;
+    border-bottom-width: 0.01mm;
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+    display: flex;
+}
+
+.nav-item {
+    color: #F0F6FC;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-item .icon {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+.nav-item .badge {
+    background-color: #30363d;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    margin-left: 6px;
+}
+
+.nav-item.active {
+    font-weight: bold;
+    border-bottom: 3px solid #f78166;
+    margin-left: 1rem;
+}

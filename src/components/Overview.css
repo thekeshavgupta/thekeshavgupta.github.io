@@ -1,0 +1,43 @@
+.overview-main-class {
+    display: flex;
+    height: inherit;
+}
+
+.overview-box {
+    /* border: 1px solid white; */
+    width: 700px;
+    margin-top: 10rem;
+    border-radius: 2%;
+    /* border: 0.01px solid whitesmoke; */
+}
+
+.overview {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: lightgrey;
+    font-style: italic;
+    text-align: justify;
+}
+
+.magic-word {
+    font-weight: bold;
+    background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: magicFade 6s ease infinite;
+}
+
+@keyframes magicFade {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
