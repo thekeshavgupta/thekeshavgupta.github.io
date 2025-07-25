@@ -1,0 +1,66 @@
+.research-main-class {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.research-head {
+    font-size: 35px;
+    color: rgb(235, 233, 233);
+    text-align: left;
+    font-weight: 600;
+}
+
+.research-head-location {
+    font-size: 20px;
+    color: rgb(235, 233, 233);
+    text-align: left;
+    font-weight: 600;
+}
+
+.research-box {
+    /* border: 1px solid white; */
+    width: 700px;
+    margin-top: 1rem;
+    border-radius: 2%;
+    color: whitesmoke;
+    /* border: 0.01px solid whitesmoke; */
+}
+
+.research {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: gainsboro;
+    font-style: italic;
+    text-align: justify;
+}
+
+
+.research-punch {
+    color: white;
+    font-style: normal;
+}
+
+.magic-word {
+    font-weight: bold;
+    background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: magicFade 90s ease infinite;
+}
+
+@keyframes magicFade {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

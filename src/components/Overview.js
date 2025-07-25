@@ -1,13 +1,13 @@
 import './Overview.css'
 import { useState, useEffect } from 'react';
 function Overview() {
-    const wordList = ['Hello', 'hola!!', 'namaste', 'bonjour!'];
+    const wordList = ['Hello', 'Hola!!', 'Namaste', 'bonjour!'];
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(prevIndex => (prevIndex + 1) % wordList.length);
-        }, 500); // change word every 2 seconds
+        }, 1000); // change word every 2 seconds
 
         return () => clearInterval(interval); // cleanup on unmount
     }, []);
