@@ -6,7 +6,7 @@
 }
 
 .experience-head {
-    font-size: 35px;
+    font-size: 30px;
     color: rgb(235, 233, 233);
     text-align: left;
     font-weight: 600;
@@ -80,7 +80,6 @@
     background-clip: text;
     /* for non-webkit browsers */
     font-weight: bold;
-    font-size: 2rem;
 }
 
 .amazon-text {
@@ -97,7 +96,6 @@
     background-clip: text;
     /* for Firefox */
     font-weight: bold;
-    font-size: 2rem;
 }
 
 .optum-text {
@@ -114,5 +112,4 @@
     background-clip: text;
     /* for Firefox */
     font-weight: bold;
-    font-size: 2rem;
 }
