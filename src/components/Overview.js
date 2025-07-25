@@ -1,10 +1,24 @@
 import './Overview.css'
+import { useState, useEffect } from 'react';
 function Overview() {
+    const wordList = ['Hello', 'hola!!', 'namaste', 'bonjour!'];
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(prevIndex => (prevIndex + 1) % wordList.length);
+        }, 500); // change word every 2 seconds
+
+        return () => clearInterval(interval); // cleanup on unmount
+    }, []);
+
     return (
         <div className="overview-main-class">
             <div className='overview-box'>
                 <div className='overview-headings'>
-                    <p className='overview-h1'><span class="magic-word"> Hola!</span> I am Keshav</p>
+                    <p className='overview-h1'>
+                        <span className="magic-word">{wordList[currentIndex]}</span> I am Keshav
+                    </p>
                 </div>
                 <p className='overview'>
                     "Passionate about the intersection of data and innovation, I specialize in machine learning, deep learning, and natural language processing (NLP) to craft intelligent systems that solve real-world challenges."

@@ -1,0 +1,118 @@
+.experience-main-class {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.experience-head {
+    font-size: 35px;
+    color: rgb(235, 233, 233);
+    text-align: left;
+    font-weight: 600;
+}
+
+.experience-head-location {
+    font-size: 20px;
+    color: rgb(235, 233, 233);
+    text-align: left;
+    font-weight: 600;
+}
+
+.experience-box {
+    /* border: 1px solid white; */
+    width: 700px;
+    margin-top: 1rem;
+    border-radius: 2%;
+    /* border: 0.01px solid whitesmoke; */
+}
+
+.experience {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: gainsboro;
+    font-style: italic;
+    text-align: justify;
+}
+
+
+.experience-punch {
+    color: white;
+    font-style: normal;
+}
+
+.magic-word {
+    font-weight: bold;
+    background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: magicFade 10s ease infinite;
+}
+
+@keyframes magicFade {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.microsoft-text {
+    background: linear-gradient(90deg,
+            #f25022 0%,
+            /* red */
+            #7fba00 25%,
+            /* green */
+            #00a4ef 50%,
+            /* blue */
+            #ffb900 75%
+            /* yellow */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* for non-webkit browsers */
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.amazon-text {
+    background: linear-gradient(90deg,
+            #ff9900 0%,
+            /* Amazon Orange */
+            #ffb84d 50%,
+            /* lighter orange */
+            #333333 100%
+            /* dark gray/blackish */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* for Firefox */
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.optum-text {
+    background: linear-gradient(90deg,
+            #f58220 0%,
+            /* Optum Orange */
+            #fbb040 50%,
+            /* Amber/Goldish */
+            #ffc20e 100%
+            /* Bright Gold */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* for Firefox */
+    font-weight: bold;
+    font-size: 2rem;
+}
