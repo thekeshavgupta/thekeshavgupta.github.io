@@ -1,12 +1,10 @@
 .main-container {
     background-color: #02040A;
     min-height: 100px;
-    /* border-bottom-width: 0.01mm;
-    border-bottom-color: lightgray;
-    border-bottom-style: solid; */
     display: flex;
 }
 
+/* Nav Item Styles */
 .nav-item {
     color: #F0F6FC;
     padding: 14px 16px;
@@ -17,11 +15,13 @@
     font-size: 20px;
 }
 
+/* Icon in nav */
 .nav-item .icon {
     margin-right: 6px;
     font-size: 16px;
 }
 
+/* Notification badge */
 .nav-item .badge {
     background-color: #30363d;
     color: white;
@@ -31,8 +31,35 @@
     margin-left: 6px;
 }
 
+/* Active tab styling */
 .nav-item.active {
     font-weight: bold;
     border-bottom: 3px solid #f78166;
     margin-left: 1rem;
+}
+
+/* 🌐 MEDIA QUERY FOR SCREENS LARGER THAN 1440px */
+@media screen and (min-width: 1800px) {
+    .main-container {
+        padding: 0 4rem;
+        justify-content: center;
+    }
+
+    .nav-item {
+        font-size: 22px;
+        padding: 18px 24px;
+    }
+
+    .nav-item .icon {
+        font-size: 18px;
+    }
+
+    .nav-item .badge {
+        font-size: 14px;
+        padding: 3px 8px;
+    }
+
+    .nav-item.active {
+        border-bottom-width: 4px;
+    }
 }

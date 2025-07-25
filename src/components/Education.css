@@ -20,11 +20,9 @@
 }
 
 .education-box {
-    /* border: 1px solid white; */
     width: 700px;
     margin-top: 1rem;
     border-radius: 2%;
-    /* border: 0.01px solid whitesmoke; */
 }
 
 .education {
@@ -34,7 +32,6 @@
     font-style: italic;
     text-align: justify;
 }
-
 
 .education-punch {
     color: white;
@@ -61,5 +58,29 @@
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* 🌐 MEDIA QUERY FOR SCREENS LARGER THAN 1440px */
+@media screen and (min-width: 1441px) {
+    .education-box {
+        width: 800px;
+    }
+
+    .education-head {
+        font-size: 36px;
+    }
+
+    .education-head-location {
+        font-size: 24px;
+    }
+
+    .education {
+        font-size: 20px;
+    }
+
+    .education-main-class {
+        margin-top: 3rem;
+        gap: 1rem;
     }
 }

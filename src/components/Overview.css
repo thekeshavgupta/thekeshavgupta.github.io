@@ -9,12 +9,11 @@
     text-align: left;
     font-weight: 600;
 }
+
 .overview-box {
-    /* border: 1px solid white; */
     width: 700px;
     margin-top: 10rem;
     border-radius: 2%;
-    /* border: 0.01px solid whitesmoke; */
 }
 
 .overview {
@@ -24,7 +23,6 @@
     font-style: italic;
     text-align: justify;
 }
-
 
 .overview-punch {
     color: white;
@@ -51,5 +49,27 @@
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* 🌐 MEDIA QUERY FOR LARGE SCREENS (15"+ MacBook and up) */
+@media screen and (min-width: 1800px) {
+    .overview-box {
+        width: 900px;
+        margin-top: 12rem;
+    }
+
+    .overview-h1 {
+        font-size: 64px;
+    }
+
+    .overview {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+
+    .overview-main-class {
+        gap: 2rem;
+        padding: 0 4rem;
     }
 }

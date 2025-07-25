@@ -1,5 +1,4 @@
 .profile-container-class {
-    /* border: 1px solid white; */
     height: 100vh;
     display: flex;
     flex: 5;
@@ -15,7 +14,6 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    /* border: 0.1px solid white; */
     align-self: center;
     border-bottom: 0.1px solid lightgrey;
 }
@@ -40,15 +38,11 @@
     color: whitesmoke;
 }
 
-
 .contact-icons {
     display: flex;
     justify-content: center;
-    /* Centers the icons horizontally */
     align-items: center;
-    /* Ensures vertical alignment */
     gap: 60px;
-    /* Adjusts spacing between icons */
     margin-top: 1rem;
 }
 
@@ -58,4 +52,34 @@
     justify-content: center;
     font-size: 2rem;
     color: white;
+}
+
+/* 🌐 MEDIA QUERY FOR LARGE SCREENS (15" MacBook+ or >1440px width) */
+@media screen and (min-width: 1000px) {
+    .profile-container-class {
+        max-width: 900px;
+        padding-top: 6rem;
+    }
+
+    .profile-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    .profile-name {
+        font-size: 36px;
+    }
+
+    .profile-quote,
+    .profile-bio {
+        font-size: 20px;
+    }
+
+    .contact-icons {
+        gap: 80px;
+    }
+
+    .contact-icons a {
+        font-size: 2.4rem;
+    }
 }
