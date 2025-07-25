@@ -3,6 +3,9 @@ function Overview() {
     return (
         <div className="overview-main-class">
             <div className='overview-box'>
+                <div className='overview-headings'>
+                    <p className='overview-h1'><span class="magic-word"> Hola!</span> I am Keshav</p>
+                </div>
                 <p className='overview'>
                     "Passionate about the intersection of data and innovation, I specialize in machine learning, deep learning, and natural language processing (NLP) to craft intelligent systems that solve real-world challenges."
                 </p>
@@ -11,7 +14,7 @@ function Overview() {
                 </p>
 
                 <br></br>
-                <p class="overview">
+                <p class="overview overview-punch">
                     <span class="magic-word"> Curious how I put intelligence to work ?</span> Dive into my portfolio – it's packed with ML, deep learning, and NLP projects, from cracking healthcare data to crafting slick web apps. Let's chat about the
                     <span class="magic-word"> magic</span>!
                 </p>

@@ -3,6 +3,12 @@
     height: inherit;
 }
 
+.overview-h1 {
+    font-size: 55px;
+    color: rgb(235, 233, 233);
+    text-align: left;
+    font-weight: 600;
+}
 .overview-box {
     /* border: 1px solid white; */
     width: 700px;
@@ -14,9 +20,15 @@
 .overview {
     font-size: 18px;
     margin-bottom: 20px;
-    color: lightgrey;
+    color: gainsboro;
     font-style: italic;
     text-align: justify;
+}
+
+
+.overview-punch {
+    color: white;
+    font-style: normal;
 }
 
 .magic-word {
