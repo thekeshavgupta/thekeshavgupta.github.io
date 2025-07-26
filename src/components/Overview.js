@@ -17,10 +17,7 @@ function Overview() {
             <div className='overview-box'>
                 <div className='overview-headings'>
                     <p className='overview-h1'>
-                        <span className="magic-word-overview">{wordList[currentIndex]}</span>
-                    </p>
-                    <p className='overview-h1'>
-                        I'm Keshav
+                        <span className="magic-word-overview">{wordList[currentIndex]}</span> I'm Keshav
                     </p>
                 </div>
                 <p className='overview'>
