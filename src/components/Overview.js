@@ -17,7 +17,10 @@ function Overview() {
             <div className='overview-box'>
                 <div className='overview-headings'>
                     <p className='overview-h1'>
-                        <span className="magic-word">{wordList[currentIndex]}</span> I am Keshav
+                        <span className="magic-word-overview">{wordList[currentIndex]}</span>
+                    </p>
+                    <p className='overview-h1'>
+                        I'm Keshav
                     </p>
                 </div>
                 <p className='overview'>
@@ -25,12 +28,6 @@ function Overview() {
                 </p>
                 <p className='overview'>
                     "My expertise spans from leveraging complex healthcare datasets like MIMIC-III to developing engaging web applications, always driven by a commitment to blend technology, data, and creativity for meaningful impact."
-                </p>
-
-                <br></br>
-                <p class="overview overview-punch">
-                    <span class="magic-word"> Curious how I put intelligence to work ?</span> Dive into my portfolio – it's packed with ML, deep learning, and NLP projects, from cracking healthcare data to crafting slick web apps. Let's chat about the
-                    <span class="magic-word"> magic</span>!
                 </p>
             </div>
         </div>

@@ -7,7 +7,7 @@
     font-size: 55px;
     color: rgb(235, 233, 233);
     text-align: left;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .overview-box {
@@ -29,13 +29,13 @@
     font-style: normal;
 }
 
-.magic-word {
+.magic-word-overview {
     font-weight: bold;
     background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
     background-size: 800% 800%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: magicFade 6s ease infinite;
+    animation: magicFade 10s ease infinite;
 }
 
 @keyframes magicFade {
