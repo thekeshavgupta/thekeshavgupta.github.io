@@ -1,7 +1,7 @@
 import './Overview.css'
 import { useState, useEffect } from 'react';
 function Overview() {
-    const wordList = ['Hello', 'Hola!!', 'Namaste', 'bonjour!'];
+    const wordList = ['Hello,', 'Hola!!', 'Namaste,', 'Bonjour!'];
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
