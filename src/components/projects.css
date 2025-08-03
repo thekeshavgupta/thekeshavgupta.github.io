@@ -40,6 +40,20 @@
     font-style: normal;
 }
 
+.projects-images {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.project-image {
+    width: auto;
+    height: 100px;
+    margin-left: 1rem;
+    border-radius: 2px;
+}
+
 .magic-word {
     font-weight: bold;
     background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);

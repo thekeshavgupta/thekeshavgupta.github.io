@@ -1,4 +1,5 @@
 import './projects.css'
+import { FaGithub } from "react-icons/fa";
 function Projects() {
     return (
         <div className="projects-main-class">
@@ -6,10 +7,17 @@ function Projects() {
                 <p className='projects-head'>Side <span class="magic-word"> Projects</span></p>
                 <ul>
                     <li>
-                        <p className='projects-head-location'>V.I.B.E : Visual Inference through Bias Elimination</p>
+                        <p className='projects-head-location'>V.I.B.E : Visual Inference through Bias Elimination <a href="https://github.com/thekeshavgupta/VIBE" target="_blank" rel="noopener noreferrer">
+                            <FaGithub className="contact-icons" color='white'/>
+                        </a></p>
                         <p className='projects'>
-                            VIBE is a text-based adversarial learning framework that removes biases from learned representations by jointly training a task classifier and an adversary to produce fair, attribute-invariant predictions.
+                            VIBE is a text-based adversarial learning framework that removes biases from learned representations by jointly training a task classifier and an adversary to produce fair, attribute-invariant predictions. 
                         </p>
+                        <div className='projects-images'>
+                            <img className='project-image' src="/images/vibe/v2.png" alt="VIBE Project Image 2" />
+                            <img className='project-image' src="/images/vibe/v3.png" alt="VIBE Project Image 2" />
+
+                        </div>
                     </li>
                     <li>
                         <p className='projects-head-location'>AURA : Autonomous Updation with Reinforced Adaptation in Gradient Descent</p>
