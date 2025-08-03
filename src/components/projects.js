@@ -7,11 +7,11 @@ function Projects() {
                 <p className='projects-head'>Side <span class="magic-word"> Projects</span></p>
                 <ul>
                     <li>
-                        <p className='projects-head-location'>V.I.B.E : Visual Inference through Bias Elimination <a href="https://github.com/thekeshavgupta/VIBE" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="contact-icons" color='white'/>
+                        <p className='projects-head-location'>V.I.B.E : Variational Information Bottleneck for Embedding <a href="https://github.com/thekeshavgupta/VIBE" target="_blank" rel="noopener noreferrer">
+                            <FaGithub className="contact-icons" color='white' />
                         </a></p>
                         <p className='projects'>
-                            VIBE is a text-based adversarial learning framework that removes biases from learned representations by jointly training a task classifier and an adversary to produce fair, attribute-invariant predictions. 
+                            VIBE is a machine learning framework designed to remove unwanted biases from text embeddings while preserving useful information for downstream tasks. It uses adversarial learning and dimensionality reduction techniques to achieve fair representations.
                         </p>
                         <div className='projects-images'>
                             <img className='project-image' src="/images/vibe/v2.png" alt="VIBE Project Image 2" />
