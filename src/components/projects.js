@@ -14,16 +14,24 @@ function Projects() {
                             VIBE is a machine learning framework designed to remove unwanted biases from text embeddings while preserving useful information for downstream tasks. It uses adversarial learning and dimensionality reduction techniques to achieve fair representations.
                         </p>
                         <div className='projects-images'>
-                            <img className='project-image' src="/images/vibe/v2.png" alt="VIBE Project Image 2" />
-                            <img className='project-image' src="/images/vibe/v3.png" alt="VIBE Project Image 2" />
+                            <img className='project-image' src="/images/vibe/v2.png" alt="VIBE Project Image 2" style={{ width: '50%', height: '50%' }} />
+                            <img className='project-image' src="/images/vibe/v3.png" alt="VIBE Project Image 2" style={{ width: '50%', height: '50%' }} />
 
                         </div>
                     </li>
                     <li>
-                        <p className='projects-head-location'>AURA : Autonomous Updation with Reinforced Adaptation in Gradient Descent</p>
+                        <p className='projects-head-location'>AURA : Adaptive Unified Regularization Approach in Gradient Descent</p>
                         <p className='projects'>
-                            AURA is a novel optimization approach inspired by reinforcement learning, designed to enhance the performance of gradient descent. By observing the current state of environment variables and adapting the update strategy accordingly, AURA aims to achieve faster convergence and lower error rates compared to traditional gradient descent methods.
+                            AURA is a novel optimization approach inspired from reinforcement learning, Adam as well as AdamW, designed to enhance the performance of gradient descent. By observing the current state of environment variables and adapting the update strategy accordingly, AURA aims to achieve faster convergence and lower error rates compared to traditional gradient descent methods.
                         </p>
+                        <div className='projects-images'>
+                            <img
+                                className="project-image"
+                                src="/images/optimizer_comparison_hf.gif"
+                                alt="Optimiser Comparison Image"
+                                style={{ width: '50%', height: '50%' }}
+                            />
+                        </div>
                     </li>
                     <li>
                         <p className='projects-head-location'>KisanMate</p>
