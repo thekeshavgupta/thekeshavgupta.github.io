@@ -11,8 +11,9 @@ function WorkExperience() {
             position: "Software Engineer 2 - (Nov. 2024 - Present)",
             isMs: true,
             details: [
-                "Led analysis and enhancement of Bing Hotel Answers price coverage, expanding hotel price visibility across various geographies.",
-                "Optimized triggering logic to improve precision and recall, resulting in more accurate and relevant hotel answers for user queries."
+                "In order to reduce operational costs arising from human intervention, I did deep dive into existing processes and discussion threads to identify inefficiencies and automation opportunities as well as designed an AI-driven agentic automation workflow leveraging Azure technologies so as to streamline manual steps, improve reliability, and minimize recurring human effort.",
+                "Optimized triggering logic to improve precision and recall, resulting in more accurate and relevant hotel answers for user queries.",
+                "Led analysis and enhancement of Bing Hotel Answers price coverage, expanding hotel price visibility across various geographies."
             ]
         },
         {
