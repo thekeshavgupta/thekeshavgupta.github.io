@@ -19,6 +19,8 @@
     border-radius: 50%;
     align-self: center;
     flex-shrink: 0;
+    box-shadow: 0 0 30px rgba(247, 129, 102, 0.3), 0 0 60px rgba(227, 179, 65, 0.15), inset 0 0 30px rgba(88, 166, 255, 0.08);
+    animation: glowTransition 10s ease infinite;
 }
 
 .profile-name {
@@ -57,6 +59,28 @@
     color: white;
 }
 
+@keyframes glowTransition {
+    0% {
+        box-shadow: 0 0 30px rgba(247, 129, 102, 0.4), 0 0 60px rgba(227, 179, 65, 0.15), inset 0 0 30px rgba(88, 166, 255, 0.08);
+    }
+
+    25% {
+        box-shadow: 0 0 30px rgba(227, 179, 65, 0.4), 0 0 60px rgba(88, 166, 255, 0.15), inset 0 0 30px rgba(163, 113, 247, 0.08);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(88, 166, 255, 0.4), 0 0 60px rgba(163, 113, 247, 0.15), inset 0 0 30px rgba(247, 129, 102, 0.08);
+    }
+
+    75% {
+        box-shadow: 0 0 30px rgba(163, 113, 247, 0.4), 0 0 60px rgba(247, 129, 102, 0.15), inset 0 0 30px rgba(227, 179, 65, 0.08);
+    }
+
+    100% {
+        box-shadow: 0 0 30px rgba(247, 129, 102, 0.4), 0 0 60px rgba(227, 179, 65, 0.15), inset 0 0 30px rgba(88, 166, 255, 0.08);
+    }
+}
+
 /* 🌐 MEDIA QUERY FOR LARGE SCREENS (15" MacBook+ or >1440px width) */
 @media screen and (min-width: 1000px) {
     .profile-container-class {
@@ -67,6 +91,7 @@
     .profile-image {
         width: 350px;
         height: 350px;
+        box-shadow: 0 0 50px rgba(247, 129, 102, 0.4), 0 0 100px rgba(227, 179, 65, 0.15), inset 0 0 50px rgba(88, 166, 255, 0.08);
     }
 
     .profile-name {
