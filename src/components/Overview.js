@@ -34,7 +34,7 @@ function Overview() {
                     </p>
                 </div>
                 <p className='overview'>
-                    "Passionate about the intersection of data and innovation, I specialize in machine learning, deep learning, and natural language processing (NLP) to craft intelligent systems that solve real-world challenges."
+                    "Passionate about the intersection of data and innovation, I specialize in Machine Learning, Deep Learning, and Natural Language Processing (NLP) to craft intelligent systems that solve real-world challenges."
                 </p>
                 <p className='overview'>
                     "My expertise spans from leveraging complex healthcare datasets like MIMIC-III to developing engaging web applications, always driven by a commitment to blend technology, data, and creativity for meaningful impact."

@@ -8,13 +8,13 @@ function Education() {
     const educations = [
         {
             degree: "Master's in Artificial Intelligence",
-            school: "University of Texas at Austin | (2024 - Present)",
-            description: "I am currently pursuing a Master's degree in Artificial Intelligence, where I have gained foundational and practical knowledge in key areas such as Machine Learning (ML), Deep Learning (DL), and Generative Models. Through coursework and hands-on projects, I have developed a solid understanding of these domains and continue to build on this knowledge with real-world applications. My current GPA stands at 3.61, reflecting consistent academic performance in this field."
+            school: "University of Texas at Austin, USA | (Jan. 2024 - Present)",
+            description: "I am currently pursuing a Master's degree in Artificial Intelligence, where I have gained foundational and practical knowledge in key areas such as Machine Learning (ML), Deep Learning (DL), and Generative Models. Through coursework and hands-on projects, I have developed a solid understanding of these domains and continue to build on this knowledge with real-world applications. My current GPA stands at 3.66 out of 4, reflecting consistent academic performance in this field."
         },
         {
             degree: "Bachelor's in Computer Engineering",
             school: "Thapar Institute of Engineering & Technology, Patiala | (2016 - 2020)",
-            description: "I completed my Bachelor of Engineering (B.E.) with a CGPA of 9.41, gaining a strong foundation in core computer science subjects like programming, data structures, algorithms, and databases. Through academic projects and hands-on work, I developed key technical and problem-solving skills, which sparked my interest in Artificial Intelligence and led me to pursue further studies in the field."
+            description: "I completed my Bachelor of Engineering (B.E.) with a CGPA of 9.41 out of 10 and gained a strong foundation in core computer science subjects like Programming, Data Structures, Algorithms, and Databases. Through academic projects and hands-on work, I developed key technical and problem-solving skills, which sparked my interest in Artificial Intelligence and led me to pursue further studies in the field."
         }
     ];
 

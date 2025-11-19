@@ -18,7 +18,6 @@
     height: 250px;
     border-radius: 50%;
     align-self: center;
-    border-bottom: 0.1px solid lightgrey;
     flex-shrink: 0;
 }
 
