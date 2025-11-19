@@ -3,6 +3,78 @@
     height: 100%;
     flex-direction: column;
     margin-top: 2rem;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+.experience-head-title {
+    font-size: 35px;
+    color: rgb(235, 233, 233);
+    text-align: left;
+    font-weight: 600;
+}
+
+.experience-carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.carousel-arrow {
+    background-color: transparent;
+    border: 2px solid #30363d;
+    color: #F0F6FC;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-arrow:hover {
+    background-color: #30363d;
+    border-color: #58a6ff;
+    color: #58a6ff;
+    transform: scale(1.1);
+}
+
+.experience-carousel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    max-width: 750px;
+    overflow: hidden;
+    position: relative;
+}
+
+.experience-box {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 8px;
+    color: whitesmoke;
+    animation: fadeInSmooth 1.2s ease-in-out;
+}
+
+@keyframes fadeInSmooth {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .experience-head {
@@ -10,6 +82,7 @@
     color: rgb(235, 233, 233);
     text-align: left;
     font-weight: 600;
+    margin: 0 0 1rem 0;
 }
 
 .experience-head-location {
@@ -17,12 +90,7 @@
     color: rgb(235, 233, 233);
     text-align: left;
     font-weight: 600;
-}
-
-.experience-box {
-    width: 700px;
-    margin-top: 10px;
-    border-radius: 2%;
+    margin: 0 0 1rem 0;
 }
 
 .experience {
@@ -36,6 +104,37 @@
 .experience-punch {
     color: white;
     font-style: normal;
+}
+
+.carousel-indicators-exp {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.indicator-exp {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #404854;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+}
+
+.indicator-exp.active {
+    background-color: #58a6ff;
+    box-shadow: 0 0 8px #58a6ff;
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.indicator-exp:hover {
+    background-color: #58a6ff;
 }
 
 /* Company gradient highlights */

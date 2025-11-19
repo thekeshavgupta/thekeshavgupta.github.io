@@ -1,21 +1,25 @@
 .profile-container-class {
-    height: 100vh;
     display: flex;
-    flex: 5;
+    flex: 0 0 auto;
     flex-direction: column;
-    margin: auto;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 20px;
-    padding-top: 5rem;
+    padding-left: 3rem;
+    overflow: visible;
+    min-width: 300px;
+    width: auto;
 }
 
 .profile-image {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     align-self: center;
     border-bottom: 0.1px solid lightgrey;
+    flex-shrink: 0;
 }
 
 .profile-name {

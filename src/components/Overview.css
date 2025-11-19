@@ -1,6 +1,10 @@
 .overview-main-class {
     display: flex;
-    height: inherit;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 2rem;
 }
 
 .overview-h1 {
@@ -8,11 +12,15 @@
     color: rgb(235, 233, 233);
     text-align: left;
     font-weight: bold;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
 }
 
 .overview-box {
     width: 700px;
-    margin-top: 10rem;
+    margin-top: 2rem;
     border-radius: 2%;
 }
 
@@ -22,6 +30,7 @@
     color: gainsboro;
     font-style: italic;
     text-align: justify;
+    line-height: 1.6;
 }
 
 .overview-punch {
@@ -33,6 +42,7 @@
     font-weight: bold;
     background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
     background-size: 800% 800%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: magicFade 10s ease infinite;

@@ -19,13 +19,13 @@ function ProfileContainer() {
 
             <div className="contact-icons">
                 <a href="mailto:guptakeshav2509@gmail.com">
-                    <FaEnvelope style={{ color: "#e63946" }} className="contact-icons" />
+                    <FaEnvelope size={32} style={{ color: "#e63946" }} />
                 </a>
                 <a href="https://www.linkedin.com/in/kgupta786" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin style={{ color: "#0077b5" }} className="contact-icons" />
+                    <FaLinkedin size={32} style={{ color: "#0077b5" }} />
                 </a>
                 <a href="https://github.com/kgupta786" target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="contact-icons" />
+                    <FaGithub size={32} style={{ color: "#ffffff" }} />
                 </a>
             </div>
         </div>

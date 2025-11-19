@@ -1,13 +1,26 @@
 import './Overview.css'
 import { useState, useEffect } from 'react';
 function Overview() {
-    const wordList = ['Hello,', 'Hola!!', 'Namaste,', 'Bonjour!'];
+    const wordList = [
+        'Hello,',      // English
+        '¡Hola!',      // Spanish
+        'नमस्ते,',      // Hindi (Namaste)
+        'Bonjour!',    // French
+        'Hallo,',      // German
+        'こんにちは,',  // Japanese (Konnichiwa)
+        '你好,',       // Mandarin Chinese (Nǐ hǎo)
+        'Ciao,',       // Italian
+        'مرحبا,',      // Arabic (Marhaba)
+        'Привет,',     // Russian (Privet)
+        'Olá,',        // Portuguese
+        '안녕하세요,'   // Korean (Annyeonghaseyo)
+    ];
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(prevIndex => (prevIndex + 1) % wordList.length);
-        }, 1000); // change word every 2 seconds
+        }, 2000); // change word every 2 seconds
 
         return () => clearInterval(interval); // cleanup on unmount
     }, []);
