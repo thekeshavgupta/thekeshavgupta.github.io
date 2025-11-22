@@ -134,10 +134,16 @@
 .projects {
     font-size: 18px;
     margin-bottom: 20px;
-    padding-left: 1rem;
     color: gainsboro;
     font-style: normal;
     text-align: justify;
+    margin-top: 0;
+}
+
+.projects-desc {
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 0;
 }
 
 .projects-punch {
@@ -190,11 +196,14 @@
     }
 
     .projects-head {
-        font-size: 42px;
-    }
-
-    .projects-head-location {
-        font-size: 24px;
+        font-size: 20px;
+        color: rgb(235, 233, 233);
+        text-align: left;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
     }
 
     .projects {

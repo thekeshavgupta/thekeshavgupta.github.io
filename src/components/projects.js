@@ -15,12 +15,6 @@ function Projects() {
             link: "https://github.com/thekeshavgupta/VIBE"
         },
         {
-            title: "AURA : Adaptive Unified Regularization Approach in Gradient Descent",
-            description: "AURA is a novel optimization approach inspired from reinforcement learning, Adam as well as AdamW, designed to enhance the performance of gradient descent. By observing the current state of environment variables and adapting the update strategy accordingly, AURA aims to achieve faster convergence and lower error rates compared to traditional gradient descent methods.",
-            images: ["/images/optimizer_comparison_hf.gif"],
-            link: null
-        },
-        {
             title: "KisanMate",
             description: "KisanMate is a mobile application developed under the guidance of Prof. Dr. P.S. Rana to assist farmers in crop disease prediction and nutrient analysis. It uses a CNN model with ~90% accuracy to enhance crop quality. The app was built using Flutter, Python, Deep Learning, Flask, and deployed via Heroku.",
             images: [],
@@ -54,14 +48,15 @@ function Projects() {
 
                 <div className="projects-carousel" ref={carouselRef}>
                     <div className="projects-box" key={currentIndex}>
-                        <h3 className='projects-head-location'>{currentProject.title}
+                        <h3 className='projects-head-location' style={{ marginBottom: '1.2rem', gap: '0.7rem' }}>
+                            <span className="magic-word">{currentProject.title}</span>
                             {currentProject.link && (
-                                <a href={currentProject.link} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '1rem' }}>
-                                    <FaGithub style={{ fontSize: '20px' }} color='white' />
+                                <a href={currentProject.link} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '0.7rem', display: 'flex', alignItems: 'center' }}>
+                                    <FaGithub style={{ fontSize: '22px', verticalAlign: 'middle' }} color='white' />
                                 </a>
                             )}
                         </h3>
-                        <p className='projects'>
+                        <p className='projects projects-desc'>
                             {currentProject.description}
                         </p>
                         {currentProject.images.length > 0 && (

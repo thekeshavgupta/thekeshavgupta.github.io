@@ -1,3 +1,18 @@
+/* Fade animation for research carousel */
+.fade {
+    animation: fadeInResearch 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInResearch {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .research-main-class {
     display: flex;
     height: 100%;

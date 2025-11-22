@@ -24,7 +24,7 @@ function ProfileContainer() {
                 <a href="https://www.linkedin.com/in/kgupta786" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin size={32} style={{ color: "#0077b5" }} />
                 </a>
-                <a href="https://github.com/kgupta786" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/thekeshavgupta" target="_blank" rel="noopener noreferrer">
                     <FaGithub size={32} style={{ color: "#ffffff" }} />
                 </a>
             </div>
