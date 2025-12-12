@@ -8,7 +8,7 @@ import Research from './research';
 import Projects from './projects';
 function DetailContainer({ activeTab }) {
     return (
-        <div className="main-detail-container">
+        <div className={`main-detail-container ${activeTab !== 'Overview' ? 'hide-profile-mobile' : ''}`}>
             <ProfileContainer />
             <div className="detail-class">
                 {activeTab === 'Overview' && <Overview />}

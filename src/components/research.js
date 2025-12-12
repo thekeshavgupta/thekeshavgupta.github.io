@@ -59,8 +59,34 @@ function Research() {
 
     const currentPub = publications[currentIndex];
 
+    const [touchStart, setTouchStart] = useState(null)
+    const [touchEnd, setTouchEnd] = useState(null)
+
+    // the required distance between touchStart and touchEnd to be detected as a swipe
+    const minSwipeDistance = 50
+
+    const onTouchStart = (e) => {
+        setTouchEnd(null)
+        setTouchStart(e.targetTouches[0].clientX)
+    }
+
+    const onTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX)
+    }
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return
+        const distance = touchStart - touchEnd
+        const isLeftSwipe = distance > minSwipeDistance
+        const isRightSwipe = distance < -minSwipeDistance
+        if (isLeftSwipe || isRightSwipe) {
+            if (isLeftSwipe) handleNext()
+            if (isRightSwipe) handlePrev()
+        }
+    }
+
     return (
-        <div className="research-main-class">
+        <div className="research-main-class" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
             <p className='research-head'><span className="magic-word"> Research</span> Publications</p>
             <div className="projects-carousel-container">
                 <button className="carousel-arrow carousel-arrow-left" onClick={handlePrev}>

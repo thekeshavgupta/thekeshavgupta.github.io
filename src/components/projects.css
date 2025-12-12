@@ -190,6 +190,7 @@
 }
 
 /* 🌐 MEDIA QUERY FOR LARGE SCREENS (15"+ MacBook or >=1441px) */
+/* 🌐 MEDIA QUERY FOR LARGE SCREENS (15"+ MacBook or >=1441px) */
 @media screen and (min-width: 1800px) {
     .projects-box {
         width: 900px;
@@ -215,5 +216,79 @@
         padding-left: 2rem;
         padding-right: 2rem;
         gap: 1rem;
+    }
+}
+
+/* 💻 MEDIA QUERY FOR TABLETS */
+@media screen and (max-width: 1024px) {
+    .projects-head {
+        font-size: 24px;
+    }
+
+    .projects {
+        font-size: 17px;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
+@media screen and (max-width: 768px) {
+    .projects-head {
+        font-size: 22px;
+        /* Balanced header size */
+    }
+
+    .projects-head-location {
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+
+    .projects-box {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .projects {
+        font-size: 15.5px;
+        /* Increased from 14px */
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .project-image {
+        height: 60px;
+        margin-left: 0.5rem;
+    }
+
+    .projects-carousel-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .projects-carousel {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .carousel-arrow {
+        display: none !important;
+    }
+
+    .projects-carousel-container .carousel-arrow {
+        display: none !important;
+    }
+
+    .carousel-indicators {
+        order: 3;
+        margin-top: auto;
+        margin-bottom: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .projects-main-class {
+        padding-left: 0;
+        padding-right: 0;
+        height: auto;
+        overflow: visible;
+        padding-bottom: 1rem;
     }
 }

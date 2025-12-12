@@ -173,6 +173,7 @@
 }
 
 /* 🌐 Responsive Design for Large Screens (1441px and up) */
+/* 🌐 Responsive Design for Large Screens (1441px and up) */
 @media screen and (min-width: 1800px) {
     .experience-main-class {
         padding-left: 2rem;
@@ -195,5 +196,85 @@
     .experience {
         font-size: 20px;
         line-height: 1.75;
+    }
+}
+
+/* 💻 MEDIA QUERY FOR TABLETS */
+@media screen and (max-width: 1024px) {
+    .experience-head-title {
+        font-size: 30px;
+    }
+
+    .experience-head {
+        font-size: 26px;
+    }
+
+    .experience {
+        font-size: 17px;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
+@media screen and (max-width: 768px) {
+    .experience-head-title {
+        font-size: 26px;
+        /* Balanced header size */
+    }
+
+    .experience-box {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .experience-head {
+        font-size: 22px;
+        /* Clear section subhead */
+        margin-bottom: 0.5rem;
+    }
+
+    .experience-head-location {
+        font-size: 15px;
+        margin-bottom: 0.5rem;
+    }
+
+    .experience {
+        font-size: 15.5px;
+        /* Increased from 14px */
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .experience-carousel-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .experience-carousel {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .carousel-arrow {
+        display: none !important;
+    }
+
+    .experience-carousel-container .carousel-arrow {
+        display: none !important;
+    }
+
+    .carousel-indicators-exp {
+        order: 3;
+        margin-top: auto;
+        /* Push to bottom */
+        margin-bottom: 0.5rem;
+        /* Spacing from bottom edge/footer */
+        gap: 0.5rem;
+    }
+
+    .experience-main-class {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 1rem;
     }
 }

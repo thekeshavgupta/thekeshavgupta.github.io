@@ -16,13 +16,13 @@
     function detectSpecificDevices() {
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
       // Detect iPhone
-      if (/iPhone/.test(userAgent) && !window.MSStream) {
-        document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
-      }
-      // Detect Android (example)
-      else if (/Android/.test(userAgent)) {
-        document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
-      }
+      // if (/iPhone/.test(userAgent) && !window.MSStream) {
+      //   document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
+      // }
+      // // Detect Android (example)
+      // else if (/Android/.test(userAgent)) {
+      //   document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
+      // }
     }
     window.onload = detectSpecificDevices;
   </script>

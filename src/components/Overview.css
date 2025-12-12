@@ -18,8 +18,38 @@
         sans-serif;
 }
 
+.overview-h1-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(235, 233, 233);
+}
+
+.overview-greeting {
+    min-width: 350px;
+    /* Check this width matches longest word approximately */
+    text-align: right;
+    /* Or left, depending on preference. Right keeps "I'm Keshav" closer */
+    /* Actually left align is better if we want "I'm Keshav" to be static position? 
+       No, if min-width is fixed, and text-align is left, expanding text grows to right.
+       If we want "I'm Keshav" to not move, the container of greeting must be fixed width.
+       Let's use a fixed width large enough. */
+    display: flex;
+    justify-content: flex-start;
+    /* Align left inside the fixed box */
+}
+
+.overview-name {
+    white-space: nowrap;
+}
+
 .overview-box {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     margin-top: 2rem;
     border-radius: 2%;
 }
@@ -81,5 +111,56 @@
     .overview-main-class {
         gap: 2rem;
         padding: 0 4rem;
+    }
+}
+
+/* 💻 MEDIA QUERY FOR TABLETS (iPad, small laptops) */
+@media screen and (max-width: 1024px) {
+    .overview-h1-container {
+        font-size: 42px;
+    }
+
+    .overview {
+        font-size: 17px;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
+@media screen and (max-width: 768px) {
+    .overview-h1-container {
+        font-size: 28px;
+        /* Balanced size for mobile */
+        flex-direction: column;
+        align-items: flex-start;
+        display: flex;
+        gap: 0;
+    }
+
+    .overview-greeting {
+        min-width: 0;
+        width: 100%;
+        text-align: left;
+        display: block;
+    }
+
+    .overview-name {
+        width: 100%;
+        display: block;
+    }
+
+    .overview {
+        font-size: 15.5px;
+        /* Increased from 14px for readability */
+        line-height: 1.6;
+        text-align: justify;
+        /* Keep justify as requested */
+    }
+
+    .overview-box {
+        margin-top: 1rem;
+    }
+
+    .overview-main-class {
+        padding: 0 1rem;
     }
 }

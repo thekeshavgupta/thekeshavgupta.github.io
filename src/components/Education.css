@@ -183,4 +183,87 @@
         margin-top: 3rem;
         gap: 1rem;
     }
+
+    .education-main-class {
+        margin-top: 3rem;
+        gap: 1rem;
+    }
+}
+
+/* 💻 MEDIA QUERY FOR TABLETS */
+@media screen and (max-width: 1024px) {
+    .education-head-title {
+        font-size: 30px;
+    }
+
+    .education-head {
+        font-size: 26px;
+    }
+
+    .education {
+        font-size: 17px;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
+@media screen and (max-width: 768px) {
+    .education-head-title {
+        font-size: 26px;
+        /* Balanced header size */
+    }
+
+    .education-box {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .education-head {
+        font-size: 22px;
+        /* Clear section subhead */
+        margin-bottom: 0.5rem;
+    }
+
+    .education-head-location {
+        font-size: 15px;
+        margin-bottom: 0.5rem;
+    }
+
+    .education {
+        font-size: 15.5px;
+        /* Increased from 14px */
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .education-carousel-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .education-carousel {
+        min-height: auto;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .carousel-arrow {
+        display: none !important;
+    }
+
+    .education-carousel-container .carousel-arrow {
+        display: none !important;
+    }
+
+    .carousel-indicators-edu {
+        margin-top: auto;
+        margin-bottom: 0.5rem;
+        order: 3;
+        gap: 0.5rem;
+    }
+
+    .education-main-class {
+        height: auto;
+        overflow: visible;
+        padding-bottom: 1rem;
+    }
 }

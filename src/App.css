@@ -4,6 +4,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: #0e1116;
+  /* Ensure no white background shows */
 }
 
 /* Remove all scrolling */
@@ -44,5 +46,17 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* 📱 MOBILE SCROLL FIX */
+@media screen and (max-width: 1050px) {
+  .App {
+    overflow-y: auto;
+    /* Allow scrolling within .App */
+    height: 100%;
+    /* Constrain to viewport so scrollbar appears on .App */
+    min-height: 0;
+    /* Override min-height if needed */
   }
 }

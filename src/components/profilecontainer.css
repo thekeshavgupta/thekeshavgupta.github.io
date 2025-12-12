@@ -19,7 +19,7 @@
     border-radius: 50%;
     align-self: center;
     flex-shrink: 0;
-    box-shadow: 0 0 30px rgba(247, 129, 102, 0.3), 0 0 60px rgba(227, 179, 65, 0.15), inset 0 0 30px rgba(88, 166, 255, 0.08);
+    box-shadow: 0 0 20px rgba(247, 129, 102, 0.3), 0 0 20px rgba(227, 179, 65, 0.15), inset 0 0 20px rgba(88, 166, 255, 0.08);
     animation: glowTransition 10s ease infinite;
 }
 
@@ -61,23 +61,23 @@
 
 @keyframes glowTransition {
     0% {
-        box-shadow: 0 0 30px rgba(247, 129, 102, 0.4), 0 0 60px rgba(227, 179, 65, 0.15), inset 0 0 30px rgba(88, 166, 255, 0.08);
+        box-shadow: 0 0 20px rgba(247, 129, 102, 0.4), 0 0 20px rgba(227, 179, 65, 0.15), inset 0 0 20px rgba(88, 166, 255, 0.08);
     }
 
     25% {
-        box-shadow: 0 0 30px rgba(227, 179, 65, 0.4), 0 0 60px rgba(88, 166, 255, 0.15), inset 0 0 30px rgba(163, 113, 247, 0.08);
+        box-shadow: 0 0 20px rgba(227, 179, 65, 0.4), 0 0 20px rgba(88, 166, 255, 0.15), inset 0 0 20px rgba(163, 113, 247, 0.08);
     }
 
     50% {
-        box-shadow: 0 0 30px rgba(88, 166, 255, 0.4), 0 0 60px rgba(163, 113, 247, 0.15), inset 0 0 30px rgba(247, 129, 102, 0.08);
+        box-shadow: 0 0 20px rgba(88, 166, 255, 0.4), 0 0 20px rgba(163, 113, 247, 0.15), inset 0 0 20px rgba(247, 129, 102, 0.08);
     }
 
     75% {
-        box-shadow: 0 0 30px rgba(163, 113, 247, 0.4), 0 0 60px rgba(247, 129, 102, 0.15), inset 0 0 30px rgba(227, 179, 65, 0.08);
+        box-shadow: 0 0 20px rgba(163, 113, 247, 0.4), 0 0 20px rgba(247, 129, 102, 0.15), inset 0 0 20px rgba(227, 179, 65, 0.08);
     }
 
     100% {
-        box-shadow: 0 0 30px rgba(247, 129, 102, 0.4), 0 0 60px rgba(227, 179, 65, 0.15), inset 0 0 30px rgba(88, 166, 255, 0.08);
+        box-shadow: 0 0 20px rgba(247, 129, 102, 0.4), 0 0 20px rgba(227, 179, 65, 0.15), inset 0 0 20px rgba(88, 166, 255, 0.08);
     }
 }
 
@@ -109,5 +109,41 @@
 
     .contact-icons a {
         font-size: 2.4rem;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR TABLETS AND MOBILES */
+@media screen and (max-width: 1050px) {
+    .profile-container-class {
+        width: 100%;
+        min-width: unset;
+        padding: 1rem;
+        padding-left: 1rem;
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 1rem;
+    }
+
+    .profile-name {
+        font-size: 26px;
+    }
+
+    .profile-bio {
+        font-size: 16px;
+        max-width: 500px;
+    }
+
+    .profile-bio {
+        font-size: 16px;
+        max-width: 500px;
+    }
+
+    .contact-icons,
+    .profile-quote {
+        display: none;
     }
 }

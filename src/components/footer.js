@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer className="footer-container">
             <p className="footer-text">
-                Crafted with <span className="heart">♥</span> by Keshav
+                Crafted with <span className="heart">❤️</span> by Keshav
             </p>
         </footer>
     );

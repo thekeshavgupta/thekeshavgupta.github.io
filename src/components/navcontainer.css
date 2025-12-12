@@ -1,7 +1,28 @@
 .main-container {
-    background-color: #02040A;
+    background-color: #0d1117;
     min-height: 100px;
     display: flex;
+    justify-content: center;
+
+    /* Center tabs by default on desktop */
+}
+
+/* Default hidden elements */
+.mobile-nav {
+    display: none;
+}
+
+.desktop-nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Soft downward fade/glow similar to footer */
+    box-shadow: 0 10px 40px -10px rgba(88, 166, 255, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+
+    /* Or center if preferred */
 }
 
 /* Nav Item Styles */
@@ -61,5 +82,152 @@
 
     .nav-item.active {
         border-bottom-width: 4px;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
+@media screen and (max-width: 768px) {
+    .main-container {
+        min-height: auto;
+        padding: 0;
+        display: block;
+        /* Block to allow stacking of header and menu */
+    }
+
+    .desktop-nav {
+        display: none;
+
+    }
+
+    .mobile-nav {
+        display: block;
+        width: 100%;
+        background-color: #0d1117;
+        padding: 1rem;
+    }
+
+    .mobile-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1rem;
+        background-color: #0d1117;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(88, 166, 255, 0.1);
+        border-radius: 10px;
+        /* Very light blue glow */
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobile-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #f78166;
+        /* Accent color */
+    }
+
+    .hamburger-icon {
+        cursor: pointer;
+        padding: 8px;
+        background: rgba(48, 54, 61, 0.5);
+        border-radius: 8px;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger-icon:active {
+        background: rgba(48, 54, 61, 0.8);
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        background-color: #161b22;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #30363d;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .mobile-nav-item {
+        padding: 18px 24px;
+        color: #c9d1d9;
+        border-bottom: 1px solid #21262d;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-nav-item.active {
+        background-color: rgba(31, 111, 235, 0.1);
+        color: #58a6ff;
+        font-weight: bold;
+        border-left: 4px solid #f78166;
+        padding-left: 20px;
+        /* Adjust for border */
+    }
+
+    .mobile-nav-item:hover {
+        background-color: #21262d;
+        padding-left: 28px;
+        /* Subtle slide effect */
+    }
+
+    .mobile-header-icons {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-right: auto;
+        /* Push them to left (or right of menu text if ordered differently in HTML) */
+    }
+
+    .mobile-header-icons a {
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s;
+    }
+
+    .mobile-header-icons a:hover {
+        transform: scale(1.1);
+    }
+
+    .mobile-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #f78166;
+        margin-right: 1rem;
+        /* Spacing between "Menu" and Hamburger if needed */
     }
 }

@@ -28,9 +28,35 @@ function Education() {
 
     const currentEducation = educations[currentIndex];
 
+    const [touchStart, setTouchStart] = useState(null)
+    const [touchEnd, setTouchEnd] = useState(null)
+
+    // the required distance between touchStart and touchEnd to be detected as a swipe
+    const minSwipeDistance = 50
+
+    const onTouchStart = (e) => {
+        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+        setTouchStart(e.targetTouches[0].clientX)
+    }
+
+    const onTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX)
+    }
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return
+        const distance = touchStart - touchEnd
+        const isLeftSwipe = distance > minSwipeDistance
+        const isRightSwipe = distance < -minSwipeDistance
+        if (isLeftSwipe || isRightSwipe) {
+            if (isLeftSwipe) handleNext()
+            if (isRightSwipe) handlePrev()
+        }
+    }
+
     return (
-        <div className="education-main-class">
-            {/* <p className='education-head-title'>Education <span className="magic-word-edu"></span></p> */}
+        <div className="education-main-class" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+            <p className='education-head-title'><span className="magic-word">Education</span></p>
             <div className="education-carousel-container">
                 <button className="carousel-arrow carousel-arrow-left" onClick={handlePrev}>
                     <FaChevronLeft size={28} />

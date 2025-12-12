@@ -35,7 +35,8 @@
 }
 
 .research-box {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     margin-top: 1rem;
     border-radius: 2%;
     color: whitesmoke;
@@ -100,5 +101,59 @@
     .research {
         font-size: 20px;
         line-height: 1.8;
+    }
+}
+
+/* 💻 MEDIA QUERY FOR TABLETS */
+@media screen and (max-width: 1024px) {
+    .research-head {
+        font-size: 30px;
+    }
+
+    .research-head-location {
+        font-size: 20px;
+    }
+
+    .research {
+        font-size: 17px;
+    }
+}
+
+/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
+@media screen and (max-width: 768px) {
+    .research-head {
+        font-size: 26px;
+        /* Balanced header size */
+    }
+
+    .research-head-location {
+        font-size: 15px;
+    }
+
+    /* Make the link icon larger and easier to tap on mobile */
+    .research-link svg {
+        font-size: 26px !important;
+        vertical-align: middle;
+        padding: 5px;
+        /* Increase touch target */
+    }
+
+    .research {
+        font-size: 15.5px;
+        /* Increased from 14px */
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .research-box {
+        margin-top: 0.5rem;
+    }
+
+    .research-main-class {
+        margin-top: 1rem;
+    }
+
+    .carousel-arrow {
+        display: none !important;
     }
 }

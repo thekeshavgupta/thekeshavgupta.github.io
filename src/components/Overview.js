@@ -2,18 +2,17 @@ import './Overview.css'
 import { useState, useEffect } from 'react';
 function Overview() {
     const wordList = [
-        'Hello,',      // English
+        'Hello!',      // English
         '¡Hola!',      // Spanish
-        'नमस्ते,',      // Hindi (Namaste)
+        'नमस्ते',      // Hindi (Namaste)
         'Bonjour!',    // French
-        'Hallo,',      // German
-        'こんにちは,',  // Japanese (Konnichiwa)
-        '你好,',       // Mandarin Chinese (Nǐ hǎo)
-        'Ciao,',       // Italian
-        'مرحبا,',      // Arabic (Marhaba)
-        'Привет,',     // Russian (Privet)
-        'Olá,',        // Portuguese
-        '안녕하세요,'   // Korean (Annyeonghaseyo)
+        'Hallo',      // German
+        '你好',       // Mandarin Chinese (Nǐ hǎo)
+        'Ciao',       // Italian
+        'مرحبا',      // Arabic (Marhaba)
+        'Привет',     // Russian (Privet)
+        'Olá',        // Portuguese
+        '안녕하세요'   // Korean (Annyeonghaseyo)
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -30,7 +29,7 @@ function Overview() {
             <div className='overview-box'>
                 <div className='overview-headings'>
                     <p className='overview-h1'>
-                        <span className="magic-word-overview">{wordList[currentIndex]}</span> I'm Keshav
+                        <span className="magic-word-overview">{' it\'s Keshav, ' + wordList[currentIndex]}</span>
                     </p>
                 </div>
                 <p className='overview'>

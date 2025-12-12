@@ -1,12 +1,14 @@
 .footer-container {
-    background-color: #02040A;
+    background-color: #0d1117;
     width: 100%;
     padding: 2rem 1rem;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid #30363d;
+    /* Replace hard border with soft fade-in shadow */
+    border-top: none;
+    box-shadow: 0 -10px 40px -10px rgba(88, 166, 255, 0.1), 0 -4px 10px -2px rgba(0, 0, 0, 0.5);
 }
 
 .footer-text {
@@ -18,9 +20,8 @@
 }
 
 .heart {
-    color: #ff2e63;
-    font-size: 25px;
-    animation: heartbeat 1.5s ease-in-out infinite;
+    font-size: 20px;
+    animation: heartbeat 2.5s ease-in-out infinite;
     display: inline-block;
     margin: 0 8px;
     line-height: 1;
