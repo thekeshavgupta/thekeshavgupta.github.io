@@ -4,12 +4,20 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 2rem;
     box-sizing: border-box;
-    padding: 3rem;
+    padding: 2rem;
     overflow: hidden;
     justify-content: flex-start;
     align-items: stretch;
+}
+
+/* 🌐 MEDIA QUERY FOR LARGER SCREENS > 1400px */
+@media screen and (min-width: 1400px) {
+    .main-detail-container {
+        gap: 4rem;
+        padding: 3rem;
+    }
 }
 
 .detail-class {
@@ -64,8 +72,31 @@
         margin-bottom: 2rem;
     }
 
-    /* Hide profile when not on Overview tab */
     .main-detail-container.hide-profile-mobile .profile-container-class {
         display: none;
     }
+}
+
+/* ↕️ SHORT SCREENS SCROLL FIX */
+@media screen and (max-height: 800px) {
+    .main-detail-container {
+        height: auto;
+        overflow: visible;
+        flex-direction: column;
+        /* Stack to ensure profile fits above/below content if needed, or just let it flow */
+    }
+
+    .detail-class {
+        overflow: visible;
+        max-height: none;
+        margin-left: 0;
+        /* Remove left margin if we are stacking or if it helps fit */
+    }
+
+    /* Ensure profile doesn't get squashed if flex-direction is row but height is unlimited */
+    /* Actually, if height is auto, and we are in row mode, it might look fine, but usually short screen implies user might want to scroll whole page. */
+    /* Let's force column for safety on short screens too, behaving like mobile? */
+    /* The user said "reduces the height", could be a desktop window resized. */
+    /* Safer to just enable scroll and keep layout if width is sufficient, BUT if width is large and height is small, row layout is fine. */
+    /* Let's just reset overflow/height so it doesn't clip. */
 }
