@@ -1,116 +1,161 @@
-import './projects.css'
-import { FaGithub } from "react-icons/fa";
-import { useState, useRef } from 'react';
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useState } from 'react';
+import './projects.css';
+import { useScrollAnimationChildren } from '../hooks/useScrollAnimation';
+import { FaGithub, FaLayerGroup, FaExternalLinkAlt, FaExpand, FaTimes } from 'react-icons/fa';
+import Carousel from './Carousel';
+
+const PROJECTS = [
+    {
+        id: 'vibe',
+        title: 'V.I.B.E : Variational Information Bottleneck for Embedding',
+        badge: 'ML Framework',
+        badgeClass: 'chip-blue',
+        description: 'VIBE is a machine learning framework designed to remove unwanted biases from text embeddings while preserving useful information for downstream tasks using adversarial learning and dimensionality reduction.',
+        images: [
+            { src: '/images/vibe/v2.png', title: 'Architecture Pipeline' },
+            { src: '/images/vibe/v3.png', title: 'Empirical Benchmark Results' }
+        ],
+        tags: ['PyTorch', 'Adversarial Learning', 'NLP', 'Fair Representations'],
+        link: 'https://github.com/thekeshavgupta/VIBE'
+    },
+    {
+        id: 'kisanmate',
+        title: 'KisanMate — Crop Health & Nutrient AI Platform',
+        badge: 'Mobile & Cloud AI',
+        badgeClass: 'chip-green',
+        description: 'KisanMate assists farmers in real-time crop disease prediction and nutrient analysis using a CNN model with ~90% accuracy, backed by a scalable Flask microservice on Heroku.',
+        images: [],
+        tags: ['Flutter', 'Python', 'CNN (~90% Acc)', 'Flask', 'Heroku'],
+        link: null
+    },
+    {
+        id: 'smart-stick',
+        title: 'Aid for Blind — Smart Stick Embedded Vision',
+        badge: 'Edge AI & IoT',
+        badgeClass: 'chip-yellow',
+        description: 'A smart mobility stick assisting visually impaired individuals with obstacle detection using edge deep learning (~85% accuracy) powered by Python, YOLO, OpenCV, and Raspberry Pi.',
+        images: [],
+        tags: ['Raspberry Pi', 'YOLO', 'OpenCV', 'Edge AI', 'IoT'],
+        link: null
+    }
+];
 
 function Projects() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const carouselRef = useRef(null);
-
-    const projects = [
-        {
-            title: "V.I.B.E : Variational Information Bottleneck for Embedding",
-            description: "VIBE is a machine learning framework designed to remove unwanted biases from text embeddings while preserving useful information for downstream tasks. It uses adversarial learning and dimensionality reduction techniques to achieve fair representations.",
-            images: ["/images/vibe/v2.png", "/images/vibe/v3.png"],
-            link: "https://github.com/thekeshavgupta/VIBE"
-        },
-        {
-            title: "KisanMate",
-            description: "KisanMate is a mobile application developed under the guidance of Prof. Dr. P.S. Rana to assist farmers in crop disease prediction and nutrient analysis. It uses a CNN model with ~90% accuracy to enhance crop quality. The app was built using Flutter, Python, Deep Learning, Flask, and deployed via Heroku.",
-            images: [],
-            link: null
-        },
-        {
-            title: "Aid for blind - Smart Stick",
-            description: "Aid for Blind is a smart stick developed under the guidance of Prof. Dr. Rajesh Mehta to assist visually impaired and elderly individuals with easier navigation. It incorporates a machine learning model with ~85% accuracy and leverages technologies such as Python, Deep Learning, YOLO, OpenCV, and Raspberry Pi.",
-            images: [],
-            link: null
-        }
-    ];
-
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    };
-
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-    };
-
-    const currentProject = projects[currentIndex];
-
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
-
-    // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 50
-
-    const onTouchStart = (e) => {
-        setTouchEnd(null)
-        setTouchStart(e.targetTouches[0].clientX)
-    }
-
-    const onTouchMove = (e) => {
-        setTouchEnd(e.targetTouches[0].clientX)
-    }
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isLeftSwipe = distance > minSwipeDistance
-        const isRightSwipe = distance < -minSwipeDistance
-        if (isLeftSwipe || isRightSwipe) {
-            if (isLeftSwipe) handleNext()
-            if (isRightSwipe) handlePrev()
-        }
-    }
+    const cardsRef = useScrollAnimationChildren({ childSelector: '.google-project-card' });
+    const [modalImage, setModalImage] = useState(null);
 
     return (
-        <div className="projects-main-class" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-            <p className='projects-head'>Side <span className="magic-word"> Projects</span></p>
-            <div className="projects-carousel-container">
-                <button className="carousel-arrow carousel-arrow-left" onClick={handlePrev}>
-                    <FaChevronLeft size={28} />
-                </button>
-
-                <div className="projects-carousel" ref={carouselRef}>
-                    <div className="projects-box" key={currentIndex}>
-                        <h3 className='projects-head-location' style={{ marginBottom: '1.2rem', gap: '0.7rem' }}>
-                            <span className="magic-word">{currentProject.title}</span>
-                            {currentProject.link && (
-                                <a href={currentProject.link} target="_blank" rel="noopener noreferrer" style={{ marginLeft: '0.7rem', display: 'flex', alignItems: 'center' }}>
-                                    <FaGithub style={{ fontSize: '22px', verticalAlign: 'middle' }} color='white' />
-                                </a>
-                            )}
-                        </h3>
-                        <p className='projects projects-desc'>
-                            {currentProject.description}
-                        </p>
-                        {currentProject.images.length > 0 && (
-                            <div className='projects-images'>
-                                {currentProject.images.map((image, index) => (
-                                    <img key={index} className='project-image' src={image} alt={`Project Image ${index + 1}`} style={{ width: '50%', height: '50%' }} />
-                                ))}
-                            </div>
-                        )}
-                    </div>
+        <section id="projects" className="google-section-projects">
+            <div className="section-container">
+                <div className="section-heading-wrapper">
+                    <span className="section-tag">Open Source & Innovation</span>
+                    <h2 className="section-heading">
+                        Featured <span className="highlight-blue">Projects</span>
+                    </h2>
+                    <p className="section-subtitle">
+                        Applied AI applications, computer vision tools, and open-source machine learning frameworks.
+                    </p>
                 </div>
 
-                <button className="carousel-arrow carousel-arrow-right" onClick={handleNext}>
-                    <FaChevronRight size={28} />
-                </button>
+                <Carousel label="project cards" trackRef={cardsRef} className="google-projects-grid">
+                    {PROJECTS.map((project) => (
+                        <div key={project.id} className="google-project-card animate-child">
+                            <div className="google-project-header">
+                                <div className="project-title-box">
+                                    <div className="project-icon-box">
+                                        <FaLayerGroup size={18} />
+                                    </div>
+                                    <div>
+                                        <h3 className="project-card-title">{project.title}</h3>
+                                        <span className={`google-chip ${project.badgeClass}`}>{project.badge}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="google-project-body">
+                                <div className="project-tags-row">
+                                    {project.tags.map((tag, i) => (
+                                        <span key={i} className="google-chip">{tag}</span>
+                                    ))}
+                                </div>
+
+                                <p className="project-desc-text">{project.description}</p>
+
+                                {project.images && project.images.length > 0 && (
+                                    <div className="project-gallery-box">
+                                        <p className="gallery-title">Architecture & Diagrams (Click to enlarge)</p>
+                                        <div className="project-interactive-grid">
+                                            {project.images.map((imgObj, i) => (
+                                                <button
+                                                    key={i}
+                                                    type="button"
+                                                    className="interactive-diagram-card"
+                                                    onClick={() => setModalImage(imgObj)}
+                                                    aria-label={`Enlarge ${imgObj.title || 'diagram'}`}
+                                                >
+                                                    <div className="diagram-thumb-wrap">
+                                                        <img
+                                                            src={imgObj.src}
+                                                            alt={imgObj.title || 'Diagram'}
+                                                            className="diagram-thumb"
+                                                            loading="lazy"
+                                                        />
+                                                        <div className="diagram-overlay">
+                                                            <FaExpand size={14} />
+                                                            <span>View Diagram</span>
+                                                        </div>
+                                                    </div>
+                                                    <span className="diagram-caption">{imgObj.title}</span>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {project.link && (
+                                    <div className="project-footer-action">
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-google-primary project-btn"
+                                            aria-label="View on GitHub"
+                                        >
+                                            <FaGithub size={15} />
+                                            <span>View Source Code</span>
+                                            <FaExternalLinkAlt size={11} />
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </Carousel>
             </div>
 
-            <div className="carousel-indicators">
-                {projects.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`indicator ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                    ></div>
-                ))}
-            </div>
-        </div>
+            {/* Lightbox / Diagram Modal */}
+            {modalImage && (
+                <div className="diagram-modal-overlay" onClick={() => setModalImage(null)}>
+                    <div className="diagram-modal-card" onClick={(e) => e.stopPropagation()}>
+                        <div className="diagram-modal-header">
+                            <h4 className="diagram-modal-title">{modalImage.title || 'Architecture Diagram'}</h4>
+                            <button
+                                type="button"
+                                className="diagram-modal-close"
+                                onClick={() => setModalImage(null)}
+                                aria-label="Close modal"
+                            >
+                                <FaTimes size={18} />
+                            </button>
+                        </div>
+                        <div className="diagram-modal-body">
+                            <img src={modalImage.src} alt={modalImage.title || 'Enlarged diagram'} className="diagram-modal-img" />
+                        </div>
+                    </div>
+                </div>
+            )}
+        </section>
     );
 }
 
-export default Projects
+export default Projects;

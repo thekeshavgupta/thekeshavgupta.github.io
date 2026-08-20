@@ -1,159 +1,108 @@
-/* Fade animation for research carousel */
-.fade {
-    animation: fadeInResearch 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+/* ==========================================================================
+   RESEARCH — GOOGLE SCHOLAR / RESEARCH LAB CARDS
+   ========================================================================== */
+
+.google-section-research {
+  background: var(--bg-surface-variant);
+  border-top: 1px solid var(--border-divider);
+  border-bottom: 1px solid var(--border-divider);
 }
 
-@keyframes fadeInResearch {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.google-research-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-elevation-1);
+  overflow: hidden;
+  height: 100%;
 }
 
-.research-main-class {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    margin-top: 2rem;
+.google-research-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-divider);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.research-head {
-    font-size: 35px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
+.research-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--google-blue-light);
+  color: var(--google-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(26, 115, 232, 0.2);
 }
 
-.research-head-location {
-    font-size: 20px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
+.research-title-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.research-box {
-    width: 100%;
-    max-width: 700px;
-    margin-top: 1rem;
-    border-radius: 2%;
-    color: whitesmoke;
+.research-paper-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
 }
 
-.research {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: gainsboro;
-    font-style: normal;
-    text-align: justify;
+.venue-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--google-blue);
 }
 
-.research-punch {
-    color: white;
-    font-style: normal;
+.google-research-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
 }
 
-.magic-word {
-    font-weight: bold;
-    background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
-    background-size: 800% 800%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: magicFade 90s ease infinite;
+.research-authors-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
 }
 
-@keyframes magicFade {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+.research-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-/* 🌐 MEDIA QUERY FOR LARGE SCREENS (≥1441px width) */
-@media screen and (min-width: 1800px) {
-    .research-main-class {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        gap: 1rem;
-    }
-
-    .research-head {
-        font-size: 42px;
-    }
-
-    .research-head-location {
-        font-size: 24px;
-    }
-
-    .research-box {
-        width: 900px;
-    }
-
-    .research {
-        font-size: 20px;
-        line-height: 1.8;
-    }
+.research-desc-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
-/* 💻 MEDIA QUERY FOR TABLETS */
-@media screen and (max-width: 1024px) {
-    .research-head {
-        font-size: 30px;
-    }
-
-    .research-head-location {
-        font-size: 20px;
-    }
-
-    .research {
-        font-size: 17px;
-    }
+.research-action-row {
+  margin-top: auto;
+  padding-top: 0.35rem;
 }
 
-/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
-@media screen and (max-width: 768px) {
-    .research-head {
-        font-size: 26px;
-        /* Balanced header size */
-    }
+.research-doi-btn {
+  font-size: 0.82rem;
+  padding: 0.45rem 1rem;
+}
 
-    .research-head-location {
-        font-size: 15px;
-    }
-
-    /* Make the link icon larger and easier to tap on mobile */
-    .research-link svg {
-        font-size: 26px !important;
-        vertical-align: middle;
-        padding: 5px;
-        /* Increase touch target */
-    }
-
-    .research {
-        font-size: 15.5px;
-        /* Increased from 14px */
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    .research-box {
-        margin-top: 0.5rem;
-    }
-
-    .research-main-class {
-        margin-top: 1rem;
-    }
-
-    .carousel-arrow {
-        display: none !important;
-    }
+@media screen and (min-width: 768px) {
+  .google-research-header {
+    padding: 1.4rem 1.75rem 1.15rem;
+  }
+  .google-research-body {
+    padding: 1.4rem 1.75rem;
+  }
 }

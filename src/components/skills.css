@@ -1,0 +1,91 @@
+/* ==========================================================================
+   TECHNICAL SKILLS — GOOGLE MATERIAL 3 GRID
+   ========================================================================== */
+
+.google-section-skills {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-divider);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.google-skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-elevation-1);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-fast);
+}
+
+.google-skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevation-hover);
+  border-color: rgba(26, 115, 232, 0.4);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-blue {
+  background: var(--google-blue-light);
+  color: var(--google-blue);
+  border: 1px solid rgba(26, 115, 232, 0.2);
+}
+
+.icon-yellow {
+  background: var(--google-yellow-light);
+  color: var(--google-yellow-dark);
+  border: 1px solid rgba(251, 188, 4, 0.3);
+}
+
+.icon-green {
+  background: var(--google-green-light);
+  color: var(--google-green);
+  border: 1px solid rgba(52, 168, 83, 0.2);
+}
+
+.icon-red {
+  background: var(--google-red-light);
+  color: var(--google-red);
+  border: 1px solid rgba(234, 67, 53, 0.2);
+}
+
+.skill-category-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.skill-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+@media screen and (min-width: 768px) {
+  .google-skill-card {
+    padding: 1.75rem;
+  }
+}

@@ -1,93 +1,84 @@
-import './Education.css'
-import { useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import './Education.css';
+import { useScrollAnimationChildren } from '../hooks/useScrollAnimation';
+import { FaGraduationCap, FaCalendarAlt, FaAward, FaUniversity } from 'react-icons/fa';
+import Carousel from './Carousel';
 
 function Education() {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const cardsRef = useScrollAnimationChildren({ childSelector: '.google-edu-card' });
 
     const educations = [
         {
             degree: "Master's in Artificial Intelligence",
-            school: "University of Texas at Austin, USA | (Jan. 2024 - Present)",
-            description: "I am currently pursuing a Master's degree in Artificial Intelligence, where I have gained foundational and practical knowledge in key areas such as Machine Learning (ML), Deep Learning (DL), and Generative Models. Through coursework and hands-on projects, I have developed a solid understanding of these domains and continue to build on this knowledge with real-world applications. My current GPA stands at 3.66 out of 4, reflecting consistent academic performance in this field."
+            school: 'University of Texas at Austin, Texas, USA',
+            period: 'Jan. 2024 – Dec. 2025',
+            gpa: 'GPA: 3.63 / 4.0',
+            badgeClass: 'chip-green',
+            focus: ['Machine Learning', 'Deep Learning', 'Generative AI', 'Optimization'],
+            description: 'Pursued advanced research and coursework in Machine Learning, Deep Neural Networks, and Generative Models with real-world application benchmarks.',
         },
         {
             degree: "Bachelor's in Computer Engineering",
-            school: "Thapar Institute of Engineering & Technology, Patiala | (2016 - 2020)",
-            description: "I completed my Bachelor of Engineering (B.E.) with a CGPA of 9.41 out of 10 and gained a strong foundation in core computer science subjects like Programming, Data Structures, Algorithms, and Databases. Through academic projects and hands-on work, I developed key technical and problem-solving skills, which sparked my interest in Artificial Intelligence and led me to pursue further studies in the field."
+            school: 'Thapar Institute of Engineering & Technology, Patiala, Punjab, India',
+            period: 'Jul. 2016 – Jul. 2020',
+            gpa: 'CGPA: 9.41 / 10',
+            badgeClass: 'chip-blue',
+            focus: ['Data Structures', 'Algorithms', 'Distributed Systems', 'Databases'],
+            description: 'Built a rigorous engineering foundation across algorithm design, distributed computing, and database architecture.',
         }
     ];
 
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % educations.length);
-    };
-
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + educations.length) % educations.length);
-    };
-
-    const currentEducation = educations[currentIndex];
-
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
-
-    // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 50
-
-    const onTouchStart = (e) => {
-        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX)
-    }
-
-    const onTouchMove = (e) => {
-        setTouchEnd(e.targetTouches[0].clientX)
-    }
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isLeftSwipe = distance > minSwipeDistance
-        const isRightSwipe = distance < -minSwipeDistance
-        if (isLeftSwipe || isRightSwipe) {
-            if (isLeftSwipe) handleNext()
-            if (isRightSwipe) handlePrev()
-        }
-    }
-
     return (
-        <div className="education-main-class" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-            <p className='education-head-title'><span className="magic-word">Education</span></p>
-            <div className="education-carousel-container">
-                <button className="carousel-arrow carousel-arrow-left" onClick={handlePrev}>
-                    <FaChevronLeft size={28} />
-                </button>
-
-                <div className="education-carousel">
-                    <div className="education-box" key={currentIndex}>
-                        <p className='education-head'><span className="magic-word">{currentEducation.degree}</span></p>
-                        <p className='education-head-location'>{currentEducation.school}</p>
-                        <p className='education'>
-                            {currentEducation.description}
-                        </p>
-                    </div>
+        <section id="education" className="google-section-education">
+            <div className="section-container">
+                <div className="section-heading-wrapper">
+                    <span className="section-tag">Academic Background</span>
+                    <h2 className="section-heading">
+                        <span className="highlight-blue">Education</span> & Qualifications
+                    </h2>
+                    <p className="section-subtitle">
+                        Strong academic rigor in Computer Science and specialized Master's level Artificial Intelligence.
+                    </p>
                 </div>
 
-                <button className="carousel-arrow carousel-arrow-right" onClick={handleNext}>
-                    <FaChevronRight size={28} />
-                </button>
-            </div>
+                <Carousel label="education cards" trackRef={cardsRef} className="google-edu-grid">
+                    {educations.map((edu) => (
+                        <div key={`${edu.school}-${edu.degree}`} className="google-edu-card animate-child">
+                            <div className="google-edu-header">
+                                <div className="edu-icon-box">
+                                    <FaGraduationCap size={22} />
+                                </div>
+                                <div className="edu-title-group">
+                                    <h3 className="edu-degree-title">{edu.degree}</h3>
+                                    <p className="edu-school-name">
+                                        <FaUniversity size={13} /> {edu.school}
+                                    </p>
+                                </div>
+                            </div>
 
-            <div className="carousel-indicators-edu">
-                {educations.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`indicator-edu ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                    ></div>
-                ))}
+                            <div className="google-edu-body">
+                                <div className="edu-meta-row">
+                                    <span className="period-chip">
+                                        <FaCalendarAlt size={12} /> {edu.period}
+                                    </span>
+                                    <span className={`google-chip ${edu.badgeClass}`}>
+                                        <FaAward size={12} /> {edu.gpa}
+                                    </span>
+                                </div>
+
+                                <div className="edu-focus-pills">
+                                    {edu.focus.map((tag, i) => (
+                                        <span key={i} className="google-chip">{tag}</span>
+                                    ))}
+                                </div>
+
+                                <p className="edu-desc-text">{edu.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </Carousel>
             </div>
-        </div>
+        </section>
     );
 }
 
-export default Education
+export default Education;

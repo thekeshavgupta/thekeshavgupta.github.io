@@ -1,57 +1,74 @@
-.footer-container {
-    background-color: #0d1117;
-    width: 100%;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+/* ==========================================================================
+   FOOTER — MINIMALISTIC GOOGLE MATERIAL FOOTER
+   ========================================================================== */
+
+.google-footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-divider);
+  padding: 1.75rem 0;
+}
+
+.google-footer-container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.google-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-copyright-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.google-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: var(--bg-chip);
+  border: 1px solid var(--border-divider);
+  transition: all var(--transition-fast);
+}
+
+.footer-icon-link:hover {
+  color: var(--google-blue);
+  background: var(--google-blue-light);
+  border-color: var(--google-blue);
+  transform: translateY(-2px);
+}
+
+/* Mobile: center everything */
+@media screen and (max-width: 600px) {
+  .google-footer-container {
+    flex-direction: column;
     align-items: center;
-    /* Replace hard border with soft fade-in shadow */
-    border-top: none;
-    box-shadow: 0 -10px 40px -10px rgba(88, 166, 255, 0.1), 0 -4px 10px -2px rgba(0, 0, 0, 0.5);
-}
+    justify-content: center;
+    text-align: center;
+  }
 
-.footer-text {
-    color: #F0F6FC;
-    font-size: 16px;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    letter-spacing: 0.5px;
-}
+  .google-footer-left {
+    justify-content: center;
+  }
 
-.heart {
-    font-size: 20px;
-    animation: heartbeat 2.5s ease-in-out infinite;
-    display: inline-block;
-    margin: 0 8px;
-    line-height: 1;
-    vertical-align: middle;
-    font-weight: bold;
-    font-family: 'Arial', 'Helvetica', sans-serif;
-}
-
-@keyframes heartbeat {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(1.3);
-    }
-
-    50% {
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-container {
-        padding: 1.5rem 1rem;
-    }
-
-    .footer-text {
-        font-size: 14px;
-    }
+  .google-footer-right {
+    justify-content: center;
+  }
 }

@@ -1,17 +1,26 @@
-import { useState } from 'react';
 import NavContainer from './navcontainer';
-import DetailContainer from './detailcontainer';
+import ProfileContainer from './profilecontainer';
+import WorkExperience from './WorkExperience';
+import Skills from './skills';
+import Education from './Education';
+import Research from './research';
+import Projects from './projects';
 import Footer from './footer';
 
-function Container() {
-    const [activeTab, setActiveTab] = useState('Overview');
-
+function Container({ theme, toggleTheme }) {
     return (
-        <>
-            <NavContainer activeTab={activeTab} setActiveTab={setActiveTab} />
-            <DetailContainer activeTab={activeTab} />
+        <div className="portfolio-container">
+            <NavContainer theme={theme} toggleTheme={toggleTheme} />
+            <main>
+                <ProfileContainer />
+                <WorkExperience />
+                <Skills />
+                <Education />
+                <Research />
+                <Projects />
+            </main>
             <Footer />
-        </>
+        </div>
     );
 }
 

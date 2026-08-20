@@ -1,128 +1,112 @@
 import './research.css';
-import React, { useState, useRef } from 'react';
-import { FaChevronLeft, FaChevronRight, FaLink } from "react-icons/fa";
+import { useScrollAnimationChildren } from '../hooks/useScrollAnimation';
+import { FaExternalLinkAlt, FaBookOpen, FaFlask } from 'react-icons/fa';
+import Carousel from './Carousel';
 
 function Research() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [fade, setFade] = useState(false);
-    const carouselRef = useRef(null);
+    const cardsRef = useScrollAnimationChildren({ childSelector: '.google-research-card' });
 
     const publications = [
         {
             title: "An adaptive framework to image watermarking based on the twin support vector regression and genetic algorithm in lifting wavelet transform domain",
             authors: "Mehta R, Gupta K, and Yadav AK",
-            description: "Proposes a robust image watermarking framework using twin support vector regression and genetic algorithms in the lifting wavelet domain. Multimed Tools Appl 2020 79:18657-18678.",
+            venue: "Multimed Tools Appl (Springer, 2020)",
+            tags: ["Image Processing", "Wavelet Transform", "Genetic Algorithms", "SVR"],
+            badgeClass: "chip-green",
+            description: "Proposes a robust image watermarking framework using twin support vector regression and genetic algorithms in the lifting wavelet domain. Published in Multimedia Tools and Applications, Springer (2020).",
             link: "https://doi.org/10.1007/s11042-020-08634-x"
         },
         {
             title: "GRAIN: Gated Recurrent Adaptive Integration Network",
             authors: "Gupta K",
-            description: "GRAIN introduces a modified GRU architecture that integrates a dynamic EWMA of past hidden states. This smooths the transition between timesteps and reduces instability during training. The approach improves generalization without increasing model complexity significantly. Experiments show consistent accuracy gains over GRU, LSTM and GRU + dropout baselines.",
+            venue: "Research Square Preprints (2024)",
+            tags: ["Recurrent Networks", "EWMA Smoothing", "Deep Learning", "Generalization"],
+            badgeClass: "chip-blue",
+            description: "GRAIN introduces a modified GRU architecture that integrates a dynamic EWMA of past hidden states to smooth transitions and reduce training instability, consistently outperforming standard GRU and LSTM baselines.",
             link: "https://dx.doi.org/10.21203/rs.3.rs-8070545/v1"
         },
         {
             title: "AIR: Activation based Isotropic Regularisation",
             authors: "Gupta K",
-            description: "AIR proposes a new regularization strategy that acts directly on activation outputs rather than weights. By reducing activation variance across samples, networks develop more stable internal feature representations. A hybrid version(AIR + L2) combines weight - and activation - level control for stronger generalization. Tests on MLP and CNN models demonstrate improved convergence robustness over conventional regularizers.",
+            venue: "Research Square Preprints (2024)",
+            tags: ["Regularization", "Activation Variance", "CNN/MLP", "Model Stability"],
+            badgeClass: "chip-yellow",
+            description: "AIR proposes a regularization strategy acting directly on activation variance across samples to build stable internal feature representations, demonstrating superior convergence robustness over conventional regularizers.",
             link: "https://dx.doi.org/10.21203/rs.3.rs-8005826/v1"
         },
         {
             title: "AURA: An Adaptive Unified Regularization Approach for Gradient-Based Optimization",
             authors: "Gupta K",
-            description: "AURA is a new optimization strategy that keeps the learning rate constant while dynamically adjusting momentum. Momentum is adapted based on loss patterns, gradient magnitude, and update direction alignment. This helps the optimization process react intelligently to training conditions and avoid divergence. Across regression and classification tasks, AURA outperforms or matches Adam, RMSProp and other adaptive optimizers.",
+            venue: "Research Square Preprints (2024)",
+            tags: ["Optimization", "Adaptive Momentum", "Gradient Descent", "Convergence"],
+            badgeClass: "chip-red",
+            description: "AURA adapts momentum based on loss patterns, gradient magnitude, and update direction alignment while maintaining a constant learning rate, matching or outperforming Adam and RMSProp across benchmarks.",
             link: "https://dx.doi.org/10.21203/rs.3.rs-7480833/v1"
-        },
-        // Add more publications as needed, with title, authors, description, and link
+        }
     ];
 
-    const handleNext = () => {
-        setFade(false);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % publications.length);
-            setFade(true);
-        }, 10);
-    };
-
-    const handlePrev = () => {
-        setFade(false);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex - 1 + publications.length) % publications.length);
-            setFade(true);
-        }, 10);
-    };
-
-    // Trigger fade on index change
-    React.useEffect(() => {
-        setFade(true);
-        return () => setFade(false);
-    }, [currentIndex]);
-
-    const currentPub = publications[currentIndex];
-
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
-
-    // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 50
-
-    const onTouchStart = (e) => {
-        setTouchEnd(null)
-        setTouchStart(e.targetTouches[0].clientX)
-    }
-
-    const onTouchMove = (e) => {
-        setTouchEnd(e.targetTouches[0].clientX)
-    }
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isLeftSwipe = distance > minSwipeDistance
-        const isRightSwipe = distance < -minSwipeDistance
-        if (isLeftSwipe || isRightSwipe) {
-            if (isLeftSwipe) handleNext()
-            if (isRightSwipe) handlePrev()
-        }
-    }
-
     return (
-        <div className="research-main-class" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-            <p className='research-head'><span className="magic-word"> Research</span> Publications</p>
-            <div className="projects-carousel-container">
-                <button className="carousel-arrow carousel-arrow-left" onClick={handlePrev}>
-                    <FaChevronLeft size={28} />
-                </button>
-
-                <div className="projects-carousel" ref={carouselRef}>
-                    <div className={`research-box${fade ? ' fade' : ''}`} key={currentIndex}>
-                        <h3 className='research-head-location'>
-                            <span className="magic-word">{currentPub.title}</span>
-                            {currentPub.link && (
-                                <a href={currentPub.link} target="_blank" rel="noopener noreferrer" className="research-link" style={{ marginLeft: '0.5rem' }}>
-                                    <FaLink style={{ fontSize: '22px', verticalAlign: 'middle', color: 'white' }} title="View Publication" />
-                                </a>
-                            )}
-                        </h3>
-                        <div className='research-authors'><b>Authors:</b> {currentPub.authors}</div>
-                        <p className='research'>{currentPub.description}</p>
-                    </div>
+        <section id="research" className="google-section-research">
+            <div className="section-container">
+                <div className="section-heading-wrapper">
+                    <span className="section-tag">Publications & AI Research</span>
+                    <h2 className="section-heading">
+                        <span className="highlight-blue">Research</span> Papers
+                    </h2>
+                    <p className="section-subtitle">
+                        Novel contributions to Deep Learning architectures, adaptive regularization, and optimization algorithms.
+                    </p>
                 </div>
 
-                <button className="carousel-arrow carousel-arrow-right" onClick={handleNext}>
-                    <FaChevronRight size={28} />
-                </button>
-            </div>
+                <Carousel label="research publication cards" trackRef={cardsRef} className="google-research-grid">
+                    {publications.map((pub) => (
+                        <div key={pub.link || pub.title} className="google-research-card animate-child">
+                            <div className="google-research-header">
+                                <div className="research-icon-badge">
+                                    <FaFlask size={18} />
+                                </div>
+                                <div className="research-title-area">
+                                    <h3 className="research-paper-title">{pub.title}</h3>
+                                    <div className="venue-row">
+                                        <FaBookOpen size={12} />
+                                        <span className="venue-text">{pub.venue}</span>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div className="carousel-indicators">
-                {publications.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`indicator ${index === currentIndex ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                    ></div>
-                ))}
+                            <div className="google-research-body">
+                                <p className="research-authors-text">
+                                    <strong>Authors:</strong> {pub.authors}
+                                </p>
+
+                                <div className="research-tags-row">
+                                    {pub.tags.map((tag, idx) => (
+                                        <span key={idx} className="google-chip">{tag}</span>
+                                    ))}
+                                </div>
+
+                                <p className="research-desc-text">{pub.description}</p>
+
+                                {pub.link && (
+                                    <div className="research-action-row">
+                                        <a
+                                            href={pub.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-google-outline research-doi-btn"
+                                            aria-label="View DOI publication"
+                                        >
+                                            <span>Read Publication (DOI)</span>
+                                            <FaExternalLinkAlt size={12} />
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </Carousel>
             </div>
-        </div>
+        </section>
     );
 }
 

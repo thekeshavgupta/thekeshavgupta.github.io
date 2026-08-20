@@ -1,46 +1,50 @@
-import './Overview.css'
-import { useState, useEffect } from 'react';
+import './Overview.css';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 function Overview() {
-    const wordList = [
-        'Hello!',      // English
-        '¡Hola!',      // Spanish
-        'नमस्ते',      // Hindi (Namaste)
-        'Bonjour!',    // French
-        'Hallo',      // German
-        '你好',       // Mandarin Chinese (Nǐ hǎo)
-        'Ciao',       // Italian
-        'مرحبا',      // Arabic (Marhaba)
-        'Привет',     // Russian (Privet)
-        'Olá',        // Portuguese
-        '안녕하세요'   // Korean (Annyeonghaseyo)
-    ];
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex(prevIndex => (prevIndex + 1) % wordList.length);
-        }, 2000); // change word every 2 seconds
-
-        return () => clearInterval(interval); // cleanup on unmount
-    }, []);
+    const sectionRef = useScrollAnimation();
 
     return (
-        <div className="overview-main-class">
-            <div className='overview-box'>
-                <div className='overview-headings'>
-                    <p className='overview-h1'>
-                        <span className="magic-word-overview">{' it\'s Keshav, ' + wordList[currentIndex]}</span>
-                    </p>
+        <section id="about" className="about-section">
+            <div className="section-container scroll-hidden" ref={sectionRef}>
+                <h2 className="section-heading">
+                    <span className="gradient-text">About</span> Me
+                </h2>
+                <div className="about-content">
+                    <div className="about-text">
+                        <p className="about-paragraph">
+                            Passionate about the intersection of data and innovation, I specialize in
+                            <span className="about-highlight"> Machine Learning</span>,
+                            <span className="about-highlight"> Deep Learning</span>, and
+                            <span className="about-highlight"> Natural Language Processing (NLP)</span> to
+                            craft intelligent systems that solve real-world challenges.
+                        </p>
+                        <p className="about-paragraph">
+                            My expertise spans from leveraging complex healthcare datasets like MIMIC-III
+                            to developing engaging web applications, always driven by a commitment to
+                            blend technology, data, and creativity for meaningful impact.
+                        </p>
+                    </div>
+
+                    {/* Quick Stats */}
+                    <div className="about-stats">
+                        <div className="stat-card">
+                            <span className="stat-number">4+</span>
+                            <span className="stat-label">Years of Experience</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">4</span>
+                            <span className="stat-label">Research Publications</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">3</span>
+                            <span className="stat-label">Companies</span>
+                        </div>
+                    </div>
                 </div>
-                <p className='overview'>
-                    "Passionate about the intersection of data and innovation, I specialize in Machine Learning, Deep Learning, and Natural Language Processing (NLP) to craft intelligent systems that solve real-world challenges."
-                </p>
-                <p className='overview'>
-                    "My expertise spans from leveraging complex healthcare datasets like MIMIC-III to developing engaging web applications, always driven by a commitment to blend technology, data, and creativity for meaningful impact."
-                </p>
             </div>
-        </div>
+        </section>
     );
 }
 
-export default Overview
+export default Overview;

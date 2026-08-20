@@ -1,294 +1,250 @@
-.projects-main-class {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    margin-top: 0.5rem;
-    gap: 1rem;
-    overflow: hidden;
+/* ==========================================================================
+   PROJECTS — GOOGLE OPEN SOURCE SHOWCASE CARDS
+   ========================================================================== */
+
+.google-section-projects {
+  background: var(--bg-surface);
 }
 
-.projects-head {
-    font-size: 35px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
+.google-project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-elevation-1);
+  overflow: hidden;
+  height: 100%;
 }
 
-.projects-carousel-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex: 1;
-    justify-content: center;
+.google-project-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-divider);
 }
 
-.carousel-arrow {
-    background-color: transparent;
-    border: 2px solid #30363d;
-    color: #F0F6FC;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+.project-title-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.carousel-arrow:hover {
-    background-color: #30363d;
-    border-color: #58a6ff;
-    color: #58a6ff;
-    transform: scale(1.1);
+.project-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--google-blue-light);
+  color: var(--google-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(26, 115, 232, 0.2);
 }
 
-.carousel-arrow-left,
-.carousel-arrow-right {
-    padding: 0;
+.project-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
 }
 
-.projects-carousel {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 350px;
-    max-width: 750px;
-    overflow: hidden;
-    position: relative;
+.google-project-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
 }
 
-.projects-box {
-    width: 100%;
-    max-width: 650px;
-    border-radius: 8px;
-    color: whitesmoke;
-    animation: fadeInSmooth 1.2s ease-in-out;
+.project-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-@keyframes fadeInSmooth {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.project-desc-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
-.projects-head-location {
-    font-size: 20px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    display: flex;
-    align-items: center;
+/* Gallery Box */
+.project-gallery-box {
+  background: var(--bg-surface-variant);
+  border: 1px solid var(--border-divider);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.projects-box ul {
-    display: none;
+.gallery-title {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
-.projects-box li {
-    display: none;
+.project-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.75rem;
 }
 
-.carousel-indicators {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
+.interactive-diagram-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
 }
 
-.indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #404854;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    display: inline-block;
+.diagram-thumb-wrap {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  aspect-ratio: 16 / 9;
 }
 
-.indicator.active {
-    background-color: #58a6ff;
-    box-shadow: 0 0 8px #58a6ff;
-    width: 40px;
-    height: 8px;
-    border-radius: 5px;
+.diagram-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
 }
 
-.indicator:hover {
-    background-color: #58a6ff;
+.diagram-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 115, 232, 0.85);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
 }
 
-.projects {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: gainsboro;
-    font-style: normal;
-    text-align: justify;
-    margin-top: 0;
+.interactive-diagram-card:hover .diagram-overlay {
+  opacity: 1;
 }
 
-.projects-desc {
-    margin-top: 0.5rem;
-    margin-bottom: 1.2rem;
-    padding-left: 0;
+.interactive-diagram-card:hover .diagram-thumb {
+  transform: scale(1.05);
 }
 
-.projects-punch {
-    color: white;
-    font-style: normal;
+.diagram-caption {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
-.projects-images {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 0.5rem;
+.project-footer-action {
+  margin-top: auto;
+  padding-top: 0.35rem;
 }
 
-.project-image {
-    width: auto;
-    height: 100px;
-    margin-left: 1rem;
-    border-radius: 2px;
+.project-btn {
+  font-size: 0.82rem;
+  padding: 0.45rem 1.1rem;
 }
 
-.magic-word {
-    font-weight: bold;
-    background: linear-gradient(270deg, #f78166, #e3b341, #58a6ff, #a371f7, #f78166);
-    background-size: 800% 800%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: magicFade 90s ease infinite;
+/* Lightbox Modal */
+.diagram-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
 }
 
-@keyframes magicFade {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+.diagram-modal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 🌐 MEDIA QUERY FOR LARGE SCREENS (15"+ MacBook or >=1441px) */
-/* 🌐 MEDIA QUERY FOR LARGE SCREENS (15"+ MacBook or >=1441px) */
-@media screen and (min-width: 1800px) {
-    .projects-box {
-        width: 900px;
-    }
-
-    .projects-head {
-        font-size: 20px;
-        color: rgb(235, 233, 233);
-        text-align: left;
-        font-weight: 600;
-        margin: 0 0 0.5rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
-    }
-
-    .projects {
-        font-size: 20px;
-        line-height: 1.8;
-    }
-
-    .projects-main-class {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        gap: 1rem;
-    }
+@keyframes modalPop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-/* 💻 MEDIA QUERY FOR TABLETS */
-@media screen and (max-width: 1024px) {
-    .projects-head {
-        font-size: 24px;
-    }
-
-    .projects {
-        font-size: 17px;
-    }
+.diagram-modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
-@media screen and (max-width: 768px) {
-    .projects-head {
-        font-size: 22px;
-        /* Balanced header size */
-    }
+.diagram-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
 
-    .projects-head-location {
-        font-size: 15px;
-        flex-wrap: wrap;
-    }
+.diagram-modal-close {
+  color: var(--text-secondary);
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
 
-    .projects-box {
-        max-width: 100%;
-        width: 100%;
-    }
+.diagram-modal-close:hover {
+  background: var(--bg-chip);
+  color: var(--text-primary);
+}
 
-    .projects {
-        font-size: 15.5px;
-        /* Increased from 14px */
-        line-height: 1.6;
-        text-align: justify;
-    }
+.diagram-modal-body {
+  padding: 1rem;
+  background: var(--bg-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
 
-    .project-image {
-        height: 60px;
-        margin-left: 0.5rem;
-    }
+.diagram-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+}
 
-    .projects-carousel-container {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .projects-carousel {
-        min-height: auto;
-        width: 100%;
-    }
-
-    .carousel-arrow {
-        display: none !important;
-    }
-
-    .projects-carousel-container .carousel-arrow {
-        display: none !important;
-    }
-
-    .carousel-indicators {
-        order: 3;
-        margin-top: auto;
-        margin-bottom: 0.5rem;
-        gap: 0.5rem;
-    }
-
-    .projects-main-class {
-        padding-left: 0;
-        padding-right: 0;
-        height: auto;
-        overflow: visible;
-        padding-bottom: 1rem;
-    }
+@media screen and (min-width: 768px) {
+  .google-project-header {
+    padding: 1.4rem 1.75rem 1.15rem;
+  }
+  .google-project-body {
+    padding: 1.4rem 1.75rem;
+  }
 }

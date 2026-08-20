@@ -1,149 +1,269 @@
-.profile-container-class {
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    padding-left: 3rem;
-    overflow: visible;
-    min-width: 300px;
-    width: auto;
+/* ==========================================================================
+   HERO / PROFILE — GOOGLE DEVELOPER MATERIAL 3 STYLE
+   ========================================================================== */
+
+.google-hero-section {
+  min-height: calc(100vh - 68px);
+  margin-top: 68px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem 1.5rem 4rem;
+  background: var(--bg-surface);
+  overflow: hidden;
 }
 
-.profile-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    align-self: center;
-    flex-shrink: 0;
-    box-shadow: 0 0 20px rgba(247, 129, 102, 0.3), 0 0 20px rgba(227, 179, 65, 0.15), inset 0 0 20px rgba(88, 166, 255, 0.08);
-    animation: glowTransition 10s ease infinite;
+/* Atmospheric Gradients */
+.google-bg-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
 }
 
-.profile-name {
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 1rem;
-    color: #F0F6FC;
+.glow-blue {
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(66, 133, 244, 0.12) 0%, transparent 70%);
 }
 
-.profile-quote {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: lightgrey;
-    font-style: italic;
+.glow-purple {
+  bottom: -10%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
 }
 
-.profile-bio {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: whitesmoke;
+/* Container */
+.google-hero-container {
+  max-width: var(--container-max);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    margin-top: 1rem;
+.google-hero-container.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.contact-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
+/* Left Hero Info */
+.google-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-@keyframes glowTransition {
-    0% {
-        box-shadow: 0 0 20px rgba(247, 129, 102, 0.4), 0 0 20px rgba(227, 179, 65, 0.15), inset 0 0 20px rgba(88, 166, 255, 0.08);
-    }
-
-    25% {
-        box-shadow: 0 0 20px rgba(227, 179, 65, 0.4), 0 0 20px rgba(88, 166, 255, 0.15), inset 0 0 20px rgba(163, 113, 247, 0.08);
-    }
-
-    50% {
-        box-shadow: 0 0 20px rgba(88, 166, 255, 0.4), 0 0 20px rgba(163, 113, 247, 0.15), inset 0 0 20px rgba(247, 129, 102, 0.08);
-    }
-
-    75% {
-        box-shadow: 0 0 20px rgba(163, 113, 247, 0.4), 0 0 20px rgba(247, 129, 102, 0.15), inset 0 0 20px rgba(227, 179, 65, 0.08);
-    }
-
-    100% {
-        box-shadow: 0 0 20px rgba(247, 129, 102, 0.4), 0 0 20px rgba(227, 179, 65, 0.15), inset 0 0 20px rgba(88, 166, 255, 0.08);
-    }
+.google-hero-headline {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
 }
 
-/* 🌐 MEDIA QUERY FOR LARGE SCREENS (15" MacBook+ or >1440px width) */
-@media screen and (min-width: 1000px) {
-    .profile-container-class {
-        max-width: 900px;
-        padding-top: 6rem;
-    }
-
-    .profile-image {
-        width: 350px;
-        height: 350px;
-        box-shadow: 0 0 50px rgba(247, 129, 102, 0.4), 0 0 100px rgba(227, 179, 65, 0.15), inset 0 0 50px rgba(88, 166, 255, 0.08);
-    }
-
-    .profile-name {
-        font-size: 36px;
-    }
-
-    .profile-quote,
-    .profile-bio {
-        font-size: 20px;
-    }
-
-    .contact-icons {
-        gap: 80px;
-    }
-
-    .contact-icons a {
-        font-size: 2.4rem;
-    }
+.google-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
-/* 📱 MEDIA QUERY FOR TABLETS AND MOBILES */
-@media screen and (max-width: 1050px) {
-    .profile-container-class {
-        width: 100%;
-        min-width: unset;
-        padding: 1rem;
-        padding-left: 1rem;
-        flex-direction: column;
-    }
+.google-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
 
-    .profile-image {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 1rem;
-    }
+.google-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
 
-    .profile-name {
-        font-size: 26px;
-    }
+/* Right Side: Profile Card Visual */
+.google-hero-right {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-    .profile-bio {
-        font-size: 16px;
-        max-width: 500px;
-    }
+.google-profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-elevation-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
 
-    .profile-bio {
-        font-size: 16px;
-        max-width: 500px;
-    }
+.google-profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevation-hover);
+}
 
-    .contact-icons,
-    .profile-quote {
-        display: none;
-    }
+/* Profile Image with Ambient Radial Glow (no harsh ring) */
+.profile-image-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-ambient-glow {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: var(--avatar-glow);
+  filter: blur(12px);
+  z-index: 0;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.profile-avatar {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-card);
+  border: 2px solid var(--border-subtle);
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.profile-name-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.profile-card-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.profile-role-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--google-blue);
+  background: var(--google-blue-light);
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.profile-card-location {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Stats Row */
+.google-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-divider);
+  width: 100%;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.stat-blue { color: var(--google-blue); }
+.stat-green { color: var(--google-green); }
+.stat-yellow { color: var(--google-yellow-dark); }
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Scroll Button */
+.google-scroll-btn {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.google-scroll-btn:hover {
+  color: var(--google-blue);
+}
+
+.scroll-arrow-anim {
+  animation: scrollDown 1.8s infinite;
+}
+
+@keyframes scrollDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@media screen and (min-width: 960px) {
+  .google-hero-container {
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 4rem;
+  }
+
+  .google-hero-headline {
+    font-size: 3.4rem;
+  }
 }

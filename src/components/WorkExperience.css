@@ -1,280 +1,156 @@
-.experience-main-class {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    margin-top: 2rem;
-    gap: 1.5rem;
-    overflow: hidden;
+/* ==========================================================================
+   WORK EXPERIENCE — GOOGLE MATERIAL 3 ELEVATED CARDS
+   ========================================================================== */
+
+.google-section-experience {
+  background: var(--bg-surface-variant);
+  border-top: 1px solid var(--border-divider);
+  border-bottom: 1px solid var(--border-divider);
 }
 
-.experience-head-title {
-    font-size: 35px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
+.google-exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-elevation-1);
+  overflow: hidden;
+  height: 100%;
 }
 
-.experience-carousel-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex: 1;
-    justify-content: center;
+.google-card-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.carousel-arrow {
-    background-color: transparent;
-    border: 2px solid #30363d;
-    color: #F0F6FC;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+.company-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.carousel-arrow:hover {
-    background-color: #30363d;
-    border-color: #58a6ff;
-    color: #58a6ff;
-    transform: scale(1.1);
+.company-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.experience-carousel {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 350px;
-    max-width: 750px;
-    overflow: hidden;
-    position: relative;
+.company-blue {
+  background: var(--google-blue-light);
+  color: var(--google-blue);
+  border: 1px solid rgba(26, 115, 232, 0.2);
 }
 
-.experience-box {
-    width: 100%;
-    max-width: 650px;
-    border-radius: 8px;
-    color: whitesmoke;
-    animation: fadeInSmooth 1.2s ease-in-out;
+.company-yellow {
+  background: var(--google-yellow-light);
+  color: var(--google-yellow-dark);
+  border: 1px solid rgba(251, 188, 4, 0.3);
 }
 
-@keyframes fadeInSmooth {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.company-green {
+  background: var(--google-green-light);
+  color: var(--google-green);
+  border: 1px solid rgba(52, 168, 83, 0.2);
 }
 
-.experience-head {
-    font-size: 30px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
+.company-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.experience-head-location {
-    font-size: 20px;
-    color: rgb(235, 233, 233);
-    text-align: left;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
+.company-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-.experience {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: gainsboro;
-    /* font-style: italic; */
-    text-align: justify;
+.position-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--google-blue);
 }
 
-.experience-punch {
-    color: white;
-    font-style: normal;
+.card-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.carousel-indicators-exp {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
+.period-chip {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--bg-chip);
+  border-radius: var(--radius-pill);
 }
 
-.indicator-exp {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #404854;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    display: inline-block;
+.google-card-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
 }
 
-.indicator-exp.active {
-    background-color: #58a6ff;
-    box-shadow: 0 0 8px #58a6ff;
-    width: 40px;
-    height: 4px;
-    border-radius: 2px;
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-.indicator-exp:hover {
-    background-color: #58a6ff;
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.15rem;
 }
 
-/* Company gradient highlights */
-.microsoft-text {
-    background: linear-gradient(90deg,
-            #f25022 0%,
-            #7fba00 25%,
-            #00a4ef 50%,
-            #ffb900 75%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: bold;
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
-.amazon-text {
-    background: linear-gradient(90deg,
-            #ff9900 0%,
-            #ffb84d 50%,
-            #333333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: bold;
+.check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--google-blue-light);
+  color: var(--google-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
 }
 
-.optum-text {
-    background: linear-gradient(90deg,
-            #f58220 0%,
-            #fbb040 50%,
-            #ffc20e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: bold;
+.detail-text {
+  flex: 1;
 }
 
-/* 🌐 Responsive Design for Large Screens (1441px and up) */
-/* 🌐 Responsive Design for Large Screens (1441px and up) */
-@media screen and (min-width: 1800px) {
-    .experience-main-class {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        gap: 1rem;
-    }
-
-    .experience-head {
-        font-size: 38px;
-    }
-
-    .experience-head-location {
-        font-size: 24px;
-    }
-
-    .experience-box {
-        width: 900px;
-    }
-
-    .experience {
-        font-size: 20px;
-        line-height: 1.75;
-    }
-}
-
-/* 💻 MEDIA QUERY FOR TABLETS */
-@media screen and (max-width: 1024px) {
-    .experience-head-title {
-        font-size: 30px;
-    }
-
-    .experience-head {
-        font-size: 26px;
-    }
-
-    .experience {
-        font-size: 17px;
-    }
-}
-
-/* 📱 MEDIA QUERY FOR MOBILE DEVICES */
-@media screen and (max-width: 768px) {
-    .experience-head-title {
-        font-size: 26px;
-        /* Balanced header size */
-    }
-
-    .experience-box {
-        max-width: 100%;
-        width: 100%;
-        margin-top: 0;
-    }
-
-    .experience-head {
-        font-size: 22px;
-        /* Clear section subhead */
-        margin-bottom: 0.5rem;
-    }
-
-    .experience-head-location {
-        font-size: 15px;
-        margin-bottom: 0.5rem;
-    }
-
-    .experience {
-        font-size: 15.5px;
-        /* Increased from 14px */
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    .experience-carousel-container {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .experience-carousel {
-        min-height: auto;
-        width: 100%;
-    }
-
-    .carousel-arrow {
-        display: none !important;
-    }
-
-    .experience-carousel-container .carousel-arrow {
-        display: none !important;
-    }
-
-    .carousel-indicators-exp {
-        order: 3;
-        margin-top: auto;
-        /* Push to bottom */
-        margin-bottom: 0.5rem;
-        /* Spacing from bottom edge/footer */
-        gap: 0.5rem;
-    }
-
-    .experience-main-class {
-        height: auto;
-        overflow: visible;
-        padding-bottom: 1rem;
-    }
+@media screen and (min-width: 768px) {
+  .google-card-header {
+    padding: 1.4rem 1.75rem 1.15rem;
+  }
+  .google-card-body {
+    padding: 1.4rem 1.75rem;
+  }
 }
