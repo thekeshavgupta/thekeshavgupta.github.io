@@ -19,7 +19,7 @@ function Research() {
         {
             title: "GRAIN: Gated Recurrent Adaptive Integration Network",
             authors: "Gupta K",
-            venue: "Research Square Preprints (2024)",
+            venue: "Research Square Preprints (2025)",
             tags: ["Recurrent Networks", "EWMA Smoothing", "Deep Learning", "Generalization"],
             badgeClass: "chip-blue",
             description: "GRAIN introduces a modified GRU architecture that integrates a dynamic EWMA of past hidden states to smooth transitions and reduce training instability, consistently outperforming standard GRU and LSTM baselines.",
@@ -28,7 +28,7 @@ function Research() {
         {
             title: "AIR: Activation based Isotropic Regularisation",
             authors: "Gupta K",
-            venue: "Research Square Preprints (2024)",
+            venue: "Research Square Preprints (2025)",
             tags: ["Regularization", "Activation Variance", "CNN/MLP", "Model Stability"],
             badgeClass: "chip-yellow",
             description: "AIR proposes a regularization strategy acting directly on activation variance across samples to build stable internal feature representations, demonstrating superior convergence robustness over conventional regularizers.",
@@ -37,7 +37,7 @@ function Research() {
         {
             title: "AURA: An Adaptive Unified Regularization Approach for Gradient-Based Optimization",
             authors: "Gupta K",
-            venue: "Research Square Preprints (2024)",
+            venue: "Research Square Preprints (2025)",
             tags: ["Optimization", "Adaptive Momentum", "Gradient Descent", "Convergence"],
             badgeClass: "chip-red",
             description: "AURA adapts momentum based on loss patterns, gradient magnitude, and update direction alignment while maintaining a constant learning rate, matching or outperforming Adam and RMSProp across benchmarks.",
