@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    :root { color-scheme: light dark; }
+    .background { fill: #1a73e8; }
+    .letter { fill: #ffffff; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0f1318; }
+      .letter { fill: #8ab4f8; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="14" />
+  <path class="letter" d="M16 12h10v16.5L40.5 12H53L36.5 31 54 52H41L26 35.5V52H16z" />
+</svg>
