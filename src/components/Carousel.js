@@ -60,7 +60,7 @@ function Carousel({ children, label, trackRef, className = '' }) {
         const nextIndex = Math.min(Math.max(activeIndex + direction, 0), items.length - 1);
         const card = track.children[nextIndex];
         if (!card) return;
-        
+
         const targetLeft = card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
         track.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
     };
@@ -88,12 +88,14 @@ function Carousel({ children, label, trackRef, className = '' }) {
             </button>
 
             <div className="carousel-mask-container">
+                <div className="carousel-edge-fade carousel-edge-fade-left" aria-hidden="true" />
                 <div className={`carousel-track ${className}`.trim()} ref={ref} aria-label={label}>
                     {items.map((item, index) => cloneElement(item, {
                         key: item.key || index,
                         className: `${item.props.className || ''} carousel-card ${index === activeIndex ? 'carousel-card-active' : 'carousel-card-inactive'}`.trim()
                     }))}
                 </div>
+                <div className="carousel-edge-fade carousel-edge-fade-right" aria-hidden="true" />
             </div>
 
             <button

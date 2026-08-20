@@ -49,6 +49,35 @@
   right: -0.75rem;
 }
 
+.carousel-mask-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: inherit;
+}
+
+.carousel-edge-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 7%;
+  z-index: 1;
+  pointer-events: none;
+  background-color: inherit;
+}
+
+.carousel-edge-fade-left {
+  left: 0;
+  -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0%, transparent 100%);
+}
+
+.carousel-edge-fade-right {
+  right: 0;
+  -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
 /* Material Pagination Indicators */
 .carousel-pagination {
   display: flex;
@@ -87,6 +116,7 @@
   .carousel-control-prev {
     left: -1.25rem;
   }
+
   .carousel-control-next {
     right: -1.25rem;
   }

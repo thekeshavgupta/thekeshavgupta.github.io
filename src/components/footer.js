@@ -13,7 +13,7 @@ function Footer() {
                         <span className="dot dot-green" />
                     </div>
                     <span className="footer-copyright-text">
-                        © {new Date().getFullYear()} Made with❤️ by Keshav Gupta
+                        © {new Date().getFullYear()} Engineered with❤️ by Keshav Gupta
                     </span>
                 </div>
 
