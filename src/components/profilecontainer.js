@@ -71,7 +71,7 @@ function ProfileContainer() {
                             <div className="avatar-ambient-glow" />
                             <img
                                 className="profile-avatar"
-                                src="/images/img2.jpeg"
+                                src="/images/updatedimage.jpg"
                                 alt="Keshav Gupta"
                                 loading="eager"
                             />
