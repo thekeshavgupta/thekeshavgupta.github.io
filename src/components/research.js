@@ -51,7 +51,7 @@ function Research() {
                 <div className="section-heading-wrapper">
                     <span className="section-tag">Publications & AI Research</span>
                     <h2 className="section-heading">
-                        <span className="highlight-blue">Research</span> Papers
+                        <span className="animated-gradient-text">Research</span> Papers
                     </h2>
                     <p className="section-subtitle">
                         Novel contributions to Deep Learning architectures, adaptive regularization, and optimization algorithms.

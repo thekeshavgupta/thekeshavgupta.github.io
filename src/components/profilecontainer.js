@@ -30,7 +30,7 @@ function ProfileContainer() {
                 {/* Left Side: Developer Info */}
                 <div className="google-hero-left">
                     <h1 className="google-hero-headline">
-                        Building intelligent, high scale <span className="highlight-gradient">distributed</span> systems.
+                        <span className="animated-gradient-text" style={{ fontWeight: 'inherit' }}>Building</span> intelligent, high scale <span className="animated-gradient-text" style={{ fontWeight: 'inherit' }}>distributed</span> systems.
                     </h1>
 
                     <p className="google-hero-desc">
@@ -79,7 +79,7 @@ function ProfileContainer() {
 
                         <div className="profile-card-content">
                             <div className="profile-name-row">
-                                <h2 className="profile-card-name">Keshav Gupta</h2>
+                                <h2 className="profile-card-name animated-gradient-text">Keshav Gupta</h2>
                                 <span className="profile-role-badge">Software Engineer</span>
                             </div>
                             <p className="profile-card-location">Ex-Microsoft | Ex-Amazon</p>

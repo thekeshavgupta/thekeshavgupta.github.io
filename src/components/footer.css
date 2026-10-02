@@ -24,6 +24,24 @@
   gap: 0.75rem;
 }
 
+.google-dots-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.google-dots-logo .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.google-dots-logo .dot-blue { background-color: var(--google-blue); }
+.google-dots-logo .dot-red { background-color: var(--google-red); }
+.google-dots-logo .dot-yellow { background-color: var(--google-yellow); }
+.google-dots-logo .dot-green { background-color: var(--google-green); }
+
 .footer-copyright-text {
   font-size: 0.88rem;
   color: var(--text-secondary);

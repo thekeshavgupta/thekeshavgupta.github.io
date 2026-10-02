@@ -18,7 +18,7 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   box-shadow: var(--shadow-elevation-2);
@@ -27,7 +27,7 @@
 }
 
 .carousel-control:hover:not(:disabled) {
-  background: #ffffff;
+  background: var(--bg-card-hover);
   border-color: var(--google-blue);
   color: var(--google-blue);
   box-shadow: var(--shadow-elevation-hover);

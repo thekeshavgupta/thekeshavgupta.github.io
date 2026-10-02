@@ -8,7 +8,7 @@ function Overview() {
         <section id="about" className="about-section">
             <div className="section-container scroll-hidden" ref={sectionRef}>
                 <h2 className="section-heading">
-                    <span className="gradient-text">About</span> Me
+                    <span className="animated-gradient-text">About</span> Me
                 </h2>
                 <div className="about-content">
                     <div className="about-text">

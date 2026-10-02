@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 68px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--bg-navbar);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-divider);
@@ -106,23 +106,43 @@
   background: var(--google-blue-surface);
 }
 
-/* Theme toggle styles (kept for future use) */
+/* Theme toggle button */
 .theme-toggle-btn {
   background: var(--bg-chip);
   border: 1px solid var(--border-divider);
+  cursor: pointer;
+  box-shadow: var(--shadow-elevation-1);
 }
 
 .theme-toggle-btn:hover {
   background: var(--bg-chip-hover);
-  color: var(--google-yellow-dark);
+  border-color: var(--border-subtle);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-elevation-2);
 }
 
 .sun-icon {
-  color: var(--google-yellow-dark);
+  color: #e3b341;
+  filter: drop-shadow(0 0 5px rgba(227, 179, 65, 0.4));
+  transition: transform var(--transition-fast), color var(--transition-fast), filter var(--transition-fast);
 }
 
 .moon-icon {
   color: var(--google-blue);
+  filter: drop-shadow(0 0 4px rgba(88, 166, 255, 0.25));
+  transition: transform var(--transition-fast), color var(--transition-fast), filter var(--transition-fast);
+}
+
+.theme-toggle-btn:hover .sun-icon {
+  transform: rotate(30deg) scale(1.15);
+  color: #fdd663;
+  filter: drop-shadow(0 0 8px rgba(253, 214, 99, 0.7));
+}
+
+.theme-toggle-btn:hover .moon-icon {
+  transform: rotate(-20deg) scale(1.15);
+  color: var(--google-blue-hover);
+  filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.6));
 }
 
 .nav-cta {
@@ -174,13 +194,14 @@
   bottom: 0;
   width: 80%;
   max-width: 320px;
-  background: #ffffff;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-divider);
   z-index: 1002;
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -196,6 +217,12 @@
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
+}
+
+.drawer-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .drawer-close-btn {

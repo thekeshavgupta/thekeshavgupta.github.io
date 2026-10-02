@@ -50,7 +50,7 @@ function Projects() {
                 <div className="section-heading-wrapper">
                     <span className="section-tag">Open Source & Innovation</span>
                     <h2 className="section-heading">
-                        Featured <span className="highlight-blue">Projects</span>
+                        Featured <span className="animated-gradient-text">Projects</span>
                     </h2>
                     <p className="section-subtitle">
                         Applied AI applications, computer vision tools, and open-source machine learning frameworks.

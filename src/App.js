@@ -3,16 +3,13 @@ import './App.css';
 import Container from './components/container';
 
 function App() {
-  // Dark mode disabled for now — always use light theme
-  // const [theme, setTheme] = useState(() => {
-  //   return localStorage.getItem('kg_theme') || 'light';
-  // });
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('kg_theme') || 'dark';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    // localStorage.setItem('kg_theme', theme);
-    localStorage.removeItem('kg_theme'); // clear any stale dark preference
+    localStorage.setItem('kg_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

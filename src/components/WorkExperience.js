@@ -58,7 +58,7 @@ function WorkExperience() {
                 <div className="section-heading-wrapper">
                     <span className="section-tag">Career Journey</span>
                     <h2 className="section-heading">
-                        Work <span className="highlight-blue">Experience</span>
+                        Work <span className="animated-gradient-text">Experience</span>
                     </h2>
                     <p className="section-subtitle">
                         Proven track record delivering mission-critical microservices and AI automation systems at scale.

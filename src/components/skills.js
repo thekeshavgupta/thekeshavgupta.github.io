@@ -56,7 +56,7 @@ function Skills() {
                 <div className="section-heading-wrapper">
                     <span className="section-tag">Core Competencies</span>
                     <h2 className="section-heading">
-                        Technical <span className="highlight-blue">Skills</span>
+                        Technical <span className="animated-gradient-text">Skills</span>
                     </h2>
                     <p className="section-subtitle">
                         Comprehensive toolkit across languages, distributed infrastructure, AI/ML engineering, and big data systems.

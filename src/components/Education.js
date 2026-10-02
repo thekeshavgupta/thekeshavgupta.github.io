@@ -33,7 +33,7 @@ function Education() {
                 <div className="section-heading-wrapper">
                     <span className="section-tag">Academic Background</span>
                     <h2 className="section-heading">
-                        <span className="highlight-blue">Education</span> & Qualifications
+                        <span className="animated-gradient-text">Education</span> & Qualifications
                     </h2>
                     <p className="section-subtitle">
                         Strong academic rigor in Computer Science and specialized Master's level Artificial Intelligence.

@@ -3,5 +3,6 @@ import App from './App';
 
 test('renders the portfolio', () => {
   render(<App />);
-  expect(screen.getByText('Keshav Gupta')).toBeInTheDocument();
+  const nameElements = screen.getAllByText('Keshav Gupta');
+  expect(nameElements.length).toBeGreaterThan(0);
 });

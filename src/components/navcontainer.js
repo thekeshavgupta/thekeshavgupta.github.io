@@ -84,7 +84,7 @@ function NavContainer({ theme, toggleTheme }) {
                     {/* Brand / Logo */}
                     <a href="#hero" className="google-brand" onClick={(e) => handleNavClick(e, '#hero')}>
                         <span className="brand-name">
-                            KG
+                            KG<span className="brand-dot">.</span>
                         </span>
                     </a>
 
@@ -109,8 +109,7 @@ function NavContainer({ theme, toggleTheme }) {
                     {/* Right Actions & Theme Toggle */}
                     <div className="google-nav-actions">
                         {/* Theme Toggle Button */}
-                        {/* We will see this feature of dark mode in future */}
-                        {/* <button
+                        <button
                             type="button"
                             className="google-icon-btn theme-toggle-btn"
                             onClick={toggleTheme}
@@ -118,7 +117,7 @@ function NavContainer({ theme, toggleTheme }) {
                             title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                         >
                             {theme === 'dark' ? <FaSun size={15} className="sun-icon" /> : <FaMoon size={15} className="moon-icon" />}
-                        </button> */}
+                        </button>
 
                         <a href="https://www.linkedin.com/in/kgupta786" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="google-icon-btn" title="LinkedIn">
                             <FaLinkedin size={15} />
@@ -145,23 +144,25 @@ function NavContainer({ theme, toggleTheme }) {
                     <div className={`google-mobile-drawer ${isOpen ? 'open' : ''}`} ref={menuRef}>
                         <div className="drawer-header">
                             <span className="brand-name">Keshav Gupta</span>
-                            {/* Dark mode toggle — disabled for now */}
-                            {/* <button
-                                type="button"
-                                className="google-icon-btn theme-toggle-btn"
-                                onClick={toggleTheme}
-                                aria-label="Toggle Theme"
-                            >
-                                {theme === 'dark' ? <FaSun size={16} /> : <FaMoon size={16} />}
-                            </button> */}
-                            <button
-                                type="button"
-                                className="google-icon-btn drawer-close-btn"
-                                onClick={() => setIsOpen(false)}
-                                aria-label="Close menu"
-                            >
-                                <FaTimes size={18} />
-                            </button>
+                            <div className="drawer-header-actions">
+                                <button
+                                    type="button"
+                                    className="google-icon-btn theme-toggle-btn"
+                                    onClick={toggleTheme}
+                                    aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                                    title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                                >
+                                    {theme === 'dark' ? <FaSun size={16} className="sun-icon" /> : <FaMoon size={16} className="moon-icon" />}
+                                </button>
+                                <button
+                                    type="button"
+                                    className="google-icon-btn drawer-close-btn"
+                                    onClick={() => setIsOpen(false)}
+                                    aria-label="Close menu"
+                                >
+                                    <FaTimes size={18} />
+                                </button>
+                            </div>
                         </div>
                         <div className="drawer-links">
                             {NAV_LINKS.map(link => (
