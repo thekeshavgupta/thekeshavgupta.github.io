@@ -3,9 +3,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0d1117" />
+  <meta name="theme-color" content="#090b10" />
+  <meta name="description" content="Keshav Gupta — Software Engineer with 6 years experience building scalable microservices, distributed systems, and AI/ML architectures. Ex-Microsoft, Ex-Amazon. M.S. AI UT Austin." />
+  <meta name="keywords" content="Keshav Gupta, Software Engineer, Microsoft, Amazon, UT Austin, Distributed Systems, PyTorch, Artificial Intelligence, Machine Learning" />
+  <meta name="author" content="Keshav Gupta" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Keshav Gupta — Software Engineer & AI Researcher" />
+  <meta property="og:description" content="Building intelligent, high-scale distributed systems. Ex-Microsoft, Ex-Amazon. M.S. AI from UT Austin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thekeshavgupta.github.io" />
+
   <script>
     (function () {
       try {
@@ -14,30 +23,10 @@
         document.documentElement.setAttribute('data-theme', theme);
         var metaTheme = document.querySelector('meta[name="theme-color"]');
         if (metaTheme) {
-          metaTheme.setAttribute('content', theme === 'dark' ? '#0d1117' : '#ffffff');
+          metaTheme.setAttribute('content', theme === 'dark' ? '#090b10' : '#f8fafc');
         }
       } catch (e) {}
     })();
-  </script>
-  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-
-  <script>
-    function detectSpecificDevices() {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      // Detect iPhone
-      // if (/iPhone/.test(userAgent) && !window.MSStream) {
-      //   document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
-      // }
-      // // Detect Android (example)
-      // else if (/Android/.test(userAgent)) {
-      //   document.body.innerHTML = "<h3>Thank you for visiting the website...</h3><p>Sorry to inform you that it is not yet available on mobile devices.<br><br> Kindly check the DESKTOP version of the website.</p>";
-      // }
-    }
-    window.onload = detectSpecificDevices;
   </script>
 
   <!-- Google tag (gtag.js) -->
@@ -46,45 +35,23 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-8SNQF0R2XM');
   </script>
+
+  <!-- Preconnect and Google Fonts: Plus Jakarta Sans, Outfit, Roboto Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg?v=2" />
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usKnu8D48E8zt6djZdhfFQpr9CL+/n1iQXee2bO3fY50kBfg1qLJzuccZFXV5vg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Keshav Gupta</title>
+  <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg?v=2" />
+  <title>Keshav Gupta | Software Engineer & AI Researcher</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 </body>
 
 </html>

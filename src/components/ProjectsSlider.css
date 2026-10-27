@@ -1,0 +1,350 @@
+/* ==========================================================================
+   FEATURED PROJECTS — STREAMLINED SLIDER WITH BOTTOM ARTIFACT CHIPS
+   ========================================================================== */
+
+.projects-section {
+  background: transparent;
+  position: relative;
+  transition: background-color var(--transition-theme);
+}
+
+.projects-slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Horizontal Track of Consistent Sized Cards */
+.projects-slider-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0.5rem 0.25rem 1.25rem;
+}
+
+.projects-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Consistent Project Card (Unified Single-Column Card) */
+.project-slide-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  scroll-snap-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  min-height: 380px;
+  position: relative;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-fast);
+}
+
+.project-slide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--google-blue);
+}
+
+/* Card Top Row with Category Badge */
+.project-card-toprow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.project-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.project-card-desc {
+  font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.project-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+/* Bottom Actions Row: GitHub Link + Interactive Artifact Viewing Chips */
+.project-action-row {
+  margin-top: auto;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border-divider);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* Interactive Artifact Chips — Click to View in Lightbox */
+.project-artifacts-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.project-artifact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(0.82rem, 1.4vw, 0.88rem);
+  font-weight: 600;
+  color: var(--google-blue);
+  background: var(--google-blue-subtle);
+  border: 1px solid var(--google-blue-border);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+}
+
+.project-artifact-chip:hover {
+  background: var(--google-blue);
+  color: #ffffff;
+  border-color: var(--google-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--google-blue-glow);
+}
+
+.art-chip-icon {
+  flex-shrink: 0;
+}
+
+.art-chip-expand {
+  opacity: 0.8;
+  transition: transform var(--transition-fast);
+}
+
+.project-artifact-chip:hover .art-chip-expand {
+  transform: scale(1.15);
+}
+
+/* ==========================================================================
+   BOTTOM SLIDER CONTROLS & PROJECT INDICATOR (GOOGLE PRODUCT SANS)
+   ========================================================================== */
+.projects-bottom-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* "Project 1 of X" Counter directly above slider icons */
+.projects-count-indicator {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  user-select: none;
+}
+
+.projects-count-indicator .count-current {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.08rem;
+}
+
+.projects-count-indicator .count-total {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Slider Nav Row: [ < ]  •••  [ > ] */
+.projects-slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+
+.project-slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.project-slider-btn:hover:not(:disabled) {
+  background: var(--google-blue);
+  color: var(--text-on-accent);
+  border-color: var(--google-blue);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+.project-slider-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Slider Pagination Indicators */
+.projects-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.projects-dot-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.projects-dot-btn:hover {
+  background: var(--google-blue);
+}
+
+.projects-dot-btn.active {
+  width: 32px;
+  border-radius: var(--radius-pill);
+  background: var(--google-blue);
+  box-shadow: 0 0 10px var(--google-blue-glow);
+}
+
+/* ==========================================================================
+   LIGHTBOX ARTIFACT MODAL DIALOG
+   ========================================================================== */
+.diagram-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 10, 18, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.diagram-modal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalZoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalZoomIn {
+  0% { transform: scale(0.95) translateY(12px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.diagram-modal-header {
+  padding: 1.25rem 1.6rem;
+  border-bottom: 1px solid var(--border-divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.diagram-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+}
+
+.diagram-modal-close {
+  background: var(--bg-surface-variant);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.diagram-modal-close:hover {
+  background: var(--google-red-subtle);
+  color: var(--google-red);
+  border-color: var(--google-red-border);
+  transform: rotate(90deg);
+}
+
+.diagram-modal-body {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background: var(--bg-surface-subtle);
+}
+
+.diagram-modal-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+@media screen and (max-width: 768px) {
+  .project-slide-card {
+    padding: 1.6rem 1.4rem;
+    min-height: auto;
+  }
+}

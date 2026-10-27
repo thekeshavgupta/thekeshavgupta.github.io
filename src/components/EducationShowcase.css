@@ -1,0 +1,370 @@
+/* ==========================================================================
+   ACADEMIC EDUCATION — DEDICATED VERTICAL TIMELINE VIEW
+   ========================================================================== */
+
+.education-section {
+  background: transparent;
+  position: relative;
+  transition: background-color var(--transition-theme);
+}
+
+/* Vertical Timeline Tree Container */
+.edu-timeline-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* Glowing Connecting Spine */
+.edu-timeline-tree::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 2rem;
+  left: 26px;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    #bf5700 0%,
+    var(--google-yellow) 50%,
+    var(--google-green) 100%
+  );
+  border-radius: 3px;
+  box-shadow: 0 0 12px rgba(191, 87, 0, 0.35);
+}
+
+.edu-milestone {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Branded Academic Timeline Nodes */
+.edu-node-wrap {
+  position: relative;
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 3px solid var(--bg-surface-variant);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.edu-milestone:hover .edu-node-wrap {
+  transform: scale(1.12);
+}
+
+/* UT Austin Burnt Orange Node */
+.edu-node-utaustin {
+  color: #bf5700;
+  box-shadow: 0 0 0 4px rgba(191, 87, 0, 0.16), var(--shadow-md);
+}
+
+[data-theme="dark"] .edu-node-utaustin {
+  color: #ff8533;
+  box-shadow: 0 0 0 4px rgba(255, 133, 51, 0.22), var(--shadow-md);
+}
+
+/* Thapar Institute Emerald Node */
+.edu-node-thapar {
+  color: #1e8e3e;
+  box-shadow: 0 0 0 4px rgba(30, 142, 62, 0.16), var(--shadow-md);
+}
+
+[data-theme="dark"] .edu-node-thapar {
+  color: #34a853;
+  box-shadow: 0 0 0 4px rgba(52, 168, 83, 0.22), var(--shadow-md);
+}
+
+/* Timeline Card */
+.edu-timeline-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-fast);
+}
+
+.edu-timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--google-blue);
+}
+
+/* Card Header — Symmetrical 2-Column Grid Across All Screen Sizes */
+.edu-card-header {
+  padding: 1.6rem 2rem 1.35rem;
+  border-bottom: 1px solid var(--border-divider);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--bg-surface-subtle);
+}
+
+.edu-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.edu-degree-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.3vw, 1.35rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+  word-break: break-word;
+}
+
+.edu-institution {
+  font-family: var(--font-display);
+  font-size: clamp(0.88rem, 1.8vw, 0.98rem);
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Symmetrical Right-Aligned Badges Cluster */
+.edu-header-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.edu-header-badges .period-pill,
+.edu-header-badges .interactive-chip {
+  white-space: nowrap;
+}
+
+/* Distinct University Badge Styling */
+.chip-utaustin {
+  background: rgba(191, 87, 0, 0.1);
+  color: #bf5700;
+  border-color: rgba(191, 87, 0, 0.3);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .chip-utaustin {
+  background: rgba(255, 117, 24, 0.16);
+  color: #ff944d;
+  border-color: rgba(255, 117, 24, 0.38);
+}
+
+.chip-thapar {
+  background: rgba(30, 142, 62, 0.1);
+  color: #1e8e3e;
+  border-color: rgba(30, 142, 62, 0.3);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .chip-thapar {
+  background: rgba(52, 168, 83, 0.16);
+  color: #4cd97b;
+  border-color: rgba(52, 168, 83, 0.38);
+}
+
+/* Card Body */
+.edu-card-body {
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+/* Accolades & Metadata Row */
+.edu-accolades-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.location-pill {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-surface-variant);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Custom GPA Accolade Styling */
+.gpa-accolade-badge {
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.gpa-utaustin {
+  background: rgba(191, 87, 0, 0.1);
+  color: #bf5700;
+  border: 1px solid rgba(191, 87, 0, 0.32);
+}
+
+[data-theme="dark"] .gpa-utaustin {
+  background: rgba(255, 117, 24, 0.18);
+  color: #ff9f5e;
+  border: 1px solid rgba(255, 117, 24, 0.4);
+}
+
+.gpa-thapar {
+  background: rgba(249, 171, 0, 0.14);
+  color: #b06000;
+  border: 1px solid rgba(249, 171, 0, 0.36);
+}
+
+[data-theme="dark"] .gpa-thapar {
+  background: rgba(249, 171, 0, 0.18);
+  color: #fbbc04;
+  border: 1px solid rgba(249, 171, 0, 0.45);
+}
+
+.edu-summary-text {
+  font-size: clamp(0.9rem, 1.6vw, 0.98rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Coursework Cluster */
+.edu-coursework-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border-divider);
+}
+
+.coursework-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coursework-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.edu-degree-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mobile-edu-icon {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE UX TRANSFORMATION: STANDALONE ACADEMIC CARDS
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  /* Hide the vertical connecting spine line */
+  .edu-timeline-tree::before {
+    display: none;
+  }
+
+  .edu-timeline-tree {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  /* Full-width standalone card */
+  .edu-milestone {
+    display: block;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* Hide the desktop detached node */
+  .edu-node-wrap {
+    display: none;
+  }
+
+  /* Show inline academic badge icon */
+  .mobile-edu-icon {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--bg-surface-variant);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .edu-timeline-card {
+    border-radius: var(--radius-lg);
+    width: 100%;
+  }
+
+  .edu-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.95rem;
+    padding: 1.35rem 1.35rem;
+  }
+
+  .edu-header-badges {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .edu-card-body {
+    padding: 1.35rem 1.35rem 1.5rem;
+    gap: 1.15rem;
+  }
+
+  .edu-degree-name {
+    font-size: 1.15rem;
+  }
+
+  .edu-accolades-row {
+    gap: 0.5rem;
+  }
+}

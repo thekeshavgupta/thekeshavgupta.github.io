@@ -1,0 +1,226 @@
+/* ==========================================================================
+   RESEARCH PUBLICATIONS — DEDICATED TIMELINE VIEW
+   ========================================================================== */
+
+.research-section {
+  background: transparent;
+  position: relative;
+}
+
+.research-timeline-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* Glowing Connecting Spine */
+.research-timeline-tree::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 2rem;
+  left: 24px;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--google-purple) 0%,
+    var(--google-blue) 60%,
+    var(--google-green) 100%
+  );
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(132, 48, 206, 0.3);
+}
+
+.research-milestone {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Milestone Year Node */
+.research-node-wrap {
+  position: relative;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 3px solid var(--bg-surface);
+  box-shadow: var(--shadow-md);
+  color: var(--google-purple);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.research-milestone:hover .research-node-wrap {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 4px var(--google-purple-subtle), var(--shadow-md);
+}
+
+/* Paper Card */
+.research-timeline-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-fast);
+}
+
+.research-timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--google-blue);
+}
+
+.paper-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border-bottom: 1px solid var(--border-divider);
+  padding-bottom: 1.25rem;
+}
+
+.paper-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.paper-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.3vw, 1.4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.paper-venue-text {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.6vw, 0.92rem);
+  font-weight: 600;
+  color: var(--google-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.paper-authors-row {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+}
+
+.paper-authors-row strong {
+  color: var(--text-primary);
+}
+
+.paper-tags-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.paper-abstract-p {
+  font-size: clamp(0.9rem, 1.6vw, 0.98rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Actions Row */
+.paper-actions-bar {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-divider);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.mobile-year-pill {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE UX TRANSFORMATION: STANDALONE RESEARCH CARDS
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  /* Hide the vertical connecting spine line */
+  .research-timeline-tree::before {
+    display: none;
+  }
+
+  .research-timeline-tree {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  /* Full-width standalone card */
+  .research-milestone {
+    display: block;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* Hide the desktop detached node */
+  .research-node-wrap {
+    display: none;
+  }
+
+  /* Show year pill inside card badge row */
+  .mobile-year-pill {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--google-blue);
+    background: var(--google-blue-subtle);
+    border: 1px solid var(--google-blue-border);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-pill);
+  }
+
+  .research-timeline-card {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    padding: 1.35rem 1.35rem;
+    gap: 1.15rem;
+  }
+
+  .paper-badge-row {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .paper-main-title {
+    font-size: 1.15rem;
+  }
+
+  .paper-actions-bar a {
+    width: 100%;
+    justify-content: center;
+  }
+}

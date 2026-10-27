@@ -1,0 +1,583 @@
+/* ==========================================================================
+   HERO SHOWCASE — ARCHITECTED DEVELOPER BENTO & PROFILE CARD
+   ========================================================================== */
+
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(6.5rem, 10vw, 8.5rem) clamp(1.15rem, 3.5vw, 2.5rem) clamp(3.5rem, 6vw, 5rem);
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+/* Atmospheric Ambient Glows */
+.hero-ambient-glow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.85;
+  animation: heroGlowMotion 14s ease-in-out infinite alternate;
+}
+
+.hero-glow-1 {
+  top: -10%;
+  left: -10%;
+  background: var(--hero-mesh-1);
+}
+
+.hero-glow-2 {
+  bottom: -15%;
+  right: -10%;
+  background: var(--hero-mesh-2);
+  animation-delay: -7s;
+}
+
+@keyframes heroGlowMotion {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(45px, 35px) scale(1.12);
+  }
+}
+
+.hero-container {
+  max-width: var(--container-max);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Hero Column */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.status-beacon-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--google-green);
+  box-shadow: 0 0 0 0 rgba(30, 142, 62, 0.6);
+  animation: pulseBeacon 2s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% {
+    box-shadow: 0 0 0 0 rgba(30, 142, 62, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(30, 142, 62, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(30, 142, 62, 0);
+  }
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5.2vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  overflow-wrap: break-word;
+}
+
+.hero-bio {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 620px;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.hero-bio strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.hero-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE THREE ACTION BUTTONS (FLUID AUTO-ADJUSTING)
+   -------------------------------------------------------------------------- */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.2vw, 0.85rem);
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.hero-btn-main {
+  font-size: clamp(0.84rem, 1.4vw, 0.95rem);
+  padding: clamp(0.65rem, 1.3vw, 0.82rem) clamp(1rem, 2vw, 1.65rem);
+  font-weight: 700;
+  gap: clamp(0.4rem, 0.8vw, 0.6rem);
+}
+
+.hero-btn-main .btn-arrow-icon {
+  transition: transform var(--transition-fast);
+}
+
+.hero-btn-main:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+.hero-secondary-btns {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.2vw, 0.85rem);
+}
+
+.hero-btn-social {
+  font-size: clamp(0.84rem, 1.4vw, 0.95rem);
+  padding: clamp(0.65rem, 1.3vw, 0.82rem) clamp(0.9rem, 1.8vw, 1.4rem);
+  font-weight: 600;
+  gap: clamp(0.4rem, 0.8vw, 0.6rem);
+}
+
+.linkedin-brand-icon {
+  color: #0a66c2;
+}
+
+/* Branded Hover Interactions */
+.hero-btn-github:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.hero-btn-linkedin:hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.08);
+}
+
+[data-theme="dark"] .hero-btn-linkedin:hover {
+  border-color: #70b5f9;
+  color: #70b5f9;
+  background: rgba(10, 102, 194, 0.16);
+}
+
+/* Mobile Button Layout (Full Width Primary + 2-Col Symmetrical Secondary) */
+@media screen and (max-width: 600px) {
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .hero-btn-main {
+    width: 100%;
+    justify-content: center;
+    padding: 0.78rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  .hero-secondary-btns {
+    width: 100%;
+    display: flex;
+    gap: 0.65rem;
+  }
+
+  .hero-btn-social {
+    flex: 1;
+    justify-content: center;
+    padding: 0.72rem 0.6rem;
+    font-size: 0.88rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   REDESIGNED DEVELOPER SHOWCASE PROFILE CARD
+   -------------------------------------------------------------------------- */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 1.85rem 1.75rem 1.65rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: profileCardFloat 6s ease-in-out infinite alternate;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s;
+}
+
+@keyframes profileCardFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-profile-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--google-blue);
+}
+
+/* Card Topbar: Status & Location */
+.profile-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.profile-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--google-blue);
+  background: var(--google-blue-subtle);
+  border: 1px solid var(--google-blue-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.profile-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--google-blue);
+  box-shadow: 0 0 8px var(--google-blue-glow);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+}
+
+.profile-location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Modern Circular Portrait Showcase with Multi-Color Ambient Glow */
+.hero-avatar-showcase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+/* Ambient Diffuse Background Glow */
+.avatar-ambient-glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: var(--avatar-glow);
+  filter: blur(24px);
+  z-index: 0;
+  opacity: 0.7;
+  animation: avatarPulseAura 6s ease-in-out infinite alternate;
+}
+
+@keyframes avatarPulseAura {
+  0% {
+    transform: scale(0.94);
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+/* Multi-Color Moving / Rotating Ambient Glow */
+.avatar-multi-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #1a73e8 0%,
+    #8430ce 22%,
+    #ea4335 45%,
+    #f9ab00 68%,
+    #1e8e3e 88%,
+    #1a73e8 100%
+  );
+  filter: blur(18px);
+  opacity: 0.65;
+  z-index: 1;
+  animation: rotateMultiGlow 9s linear infinite;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+[data-theme="dark"] .avatar-multi-glow {
+  background: conic-gradient(
+    from 0deg,
+    #8ab4f8 0%,
+    #c58af9 22%,
+    #f28b82 45%,
+    #fdd663 68%,
+    #81c995 88%,
+    #8ab4f8 100%
+  );
+  filter: blur(22px);
+  opacity: 0.85;
+}
+
+@keyframes rotateMultiGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar-frame {
+  position: relative;
+  width: clamp(165px, 18vw, 190px);
+  height: clamp(165px, 18vw, 190px);
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 4px solid var(--bg-card);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  transition: transform var(--transition-fast);
+  display: block;
+}
+
+.hero-profile-card:hover .avatar-multi-glow {
+  opacity: 0.9;
+  transform: scale(1.08);
+}
+
+.hero-profile-card:hover .hero-avatar-img {
+  transform: scale(1.02);
+}
+
+/* Floating Credential Tag Over Circular Avatar */
+.avatar-floating-tag {
+  position: absolute;
+  bottom: 2px;
+  right: -4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.32rem 0.8rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 2;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.avatar-floating-tag svg {
+  color: var(--google-yellow-dark);
+}
+
+/* Card Body */
+.profile-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-name-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.profile-role-sub {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--google-blue);
+}
+
+.profile-credentials-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-surface-variant);
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-pill);
+}
+
+.cred-dot {
+  color: var(--google-blue);
+  opacity: 0.7;
+  font-size: 0.7rem;
+}
+
+/* Symmetrical Stats Bento Grid */
+.hero-stats-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border-divider);
+  width: 100%;
+}
+
+.hero-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.4rem;
+  background: var(--bg-surface-variant);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.hero-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--google-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.stat-blue {
+  color: var(--google-blue);
+}
+
+.stat-green {
+  color: var(--google-green);
+}
+
+.stat-yellow {
+  color: var(--google-yellow-dark);
+}
+
+.stat-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Desktop 2-Column Hero Layout */
+@media screen and (min-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 4.5rem;
+  }
+}

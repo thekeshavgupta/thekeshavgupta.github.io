@@ -10,6 +10,10 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('kg_theme', theme);
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute('content', theme === 'dark' ? '#090b10' : '#f8fafc');
+    }
   }, [theme]);
 
   const toggleTheme = () => {

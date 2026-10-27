@@ -1,23 +1,23 @@
-import NavContainer from './navcontainer';
-import ProfileContainer from './profilecontainer';
-import WorkExperience from './WorkExperience';
-import Skills from './skills';
-import Education from './Education';
-import Research from './research';
-import Projects from './projects';
-import Footer from './footer';
+import Navbar from './Navbar';
+import Hero from './Hero';
+import ExperienceTimeline from './ExperienceTimeline';
+import SkillsBento from './SkillsBento';
+import EducationShowcase from './EducationShowcase';
+import ResearchTimeline from './ResearchTimeline';
+import ProjectsSlider from './ProjectsSlider';
+import Footer from './Footer';
 
 function Container({ theme, toggleTheme }) {
     return (
-        <div className="portfolio-container">
-            <NavContainer theme={theme} toggleTheme={toggleTheme} />
+        <div className="portfolio-app-root">
+            <Navbar theme={theme} toggleTheme={toggleTheme} />
             <main>
-                <ProfileContainer />
-                <WorkExperience />
-                <Skills />
-                <Education />
-                <Research />
-                <Projects />
+                <Hero />
+                <ExperienceTimeline />
+                <SkillsBento />
+                <EducationShowcase />
+                <ResearchTimeline />
+                <ProjectsSlider />
             </main>
             <Footer />
         </div>
